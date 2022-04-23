@@ -97,12 +97,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: lx
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: "git"
-  repo: https://github.com/barryxc/barry.github.io
+  repo: "git@github.com:barryxc/barry.github.io.git"
   branch: gh-pages
-  token: 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
