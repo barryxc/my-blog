@@ -105,4 +105,4 @@ deploy:
   type: "git"
   repo: https://github.com/barryxc/barry.github.io
   branch: gh-pages
-  token: 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
+  token: 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
