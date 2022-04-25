@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "barry"
-subtitle: "行成于思毁于随"
+title: "Barry"
+subtitle: "行成于思、毁于随"
 description: "android"
-keywords: "android"
+keywords: ""
 author: barry
 language: zh-CN
 timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://barryxc.github.io/barry.github.io/
+url: https://xuechuang.cc
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -57,7 +57,7 @@ prismjs:
   tab_replace: ""
 
 # Home page setting
-# path: Root path for your blogs index page. (default = '')
+# path: "barry.github.io"
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
