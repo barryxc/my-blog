@@ -1,0 +1,186 @@
+---
+title: android签名详解
+date: 2022-04-24 12:36:49
+tags: android
+---
+
+**Android 支持以下三种应用签名方案**
+
+- v1 方案：基于 JAR 签名。
+- v2 方案：[APK 签名方案 v2](https://source.android.com/security/apksigning/v2?hl=zh-cn)（在 Android 7.0 中引入），Android 11 强制要求开启 v2 签名。
+- v3 方案：[APK 签名方案 v3](https://source.android.com/security/apksigning/v3?hl=zh-cn)（在 Android 9.0 中引入）。
+
+**APK 签名验证过程**
+
+<!-- more -->
+
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637240247957-902343f6-793b-467d-88da-39cb6b79b65b.png)
+
+## v1 签名机制
+
+**v1 签名过程**
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637241119998-710e5f21-ceb5-427d-9737-732fc517d842.png)
+
+android apk 本质上是一个 zip 文件，解压缩 apk 之后，在 META-INF 文件下下面有个 3 个文件。这 3 个文件在签名时创建，在验证时使用。
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637241932281-ff71b895-3437-4847-b94e-e1343a28a22b.png)
+
+1. MANIFEST.MF 文件
+
+文件内容：前面几行记录的是基础信息，后面的 key-value 对，记录 apk 中每一个文件对应的摘要信息，防止某个文件被篡改。
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637241496036-ae9f77f3-de63-498b-84de-c73bd76dbbe5.png)
+
+1. CERT.SF 文件
+
+文件的内容：**SHA-256-Digest-Manifest** 记录的是 **MANIFEST.MF** 的信息摘要，以及 **MANIFEST.MF** 中，每个数据块的摘要。防止 **MANIFEST.MF** 被篡改。
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637241675582-ba01a2ff-a958-4c1b-a1a8-8ffb83b7e12d.png)
+
+1. CERT.RSA 文件
+
+文件内容：存储了签名和公钥证书以及 SF 文件的摘要信息。
+
+```git
+openssl pkcs7 -inform DER -in CERT.RSA -noout -print_certs -text
+```
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637289563483-c9d98b18-0e99-4a10-94b8-67a7a89aca25.png)
+
+**v1 签名存在的问题**
+
+1. **校验速度慢：**需要对 apk 中的每个文件都计算摘要并验证，如果文件很多，校验时间会很长。
+2. **完整性不够：**V1 签名只会校验 Zip 文件中的部分文件，例如 **META-INFO** 文件夹就不会参与校验。
+
+## V2 签名机制
+
+了解 zip 压缩包格式和 APK 签名之后的数据格式
+
+为了保护 APK 内容，APK 包含以下 4 个部分：
+
+- ZIP 条目的内容（从偏移量 0 处开始一直到“APK 签名分块”的起始位置）
+- APK 签名分块
+- ZIP 中央目录
+- ZIP 中央目录结尾
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637291796732-139b2e40-e3ee-4fcc-a390-1f522c09d08c.png)
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637291614626-4631c226-7cf7-462c-83f2-231beb6cd268.png)
+
+**zip 压缩包的解析过程**
+
+1. 先从文件尾部查找 0x06054b50，确定 End Of Central Directory Record 区域的起始位置；
+2. 解析 EoCDR 区域，并获得中央目录的起始位置；
+3. 根据起始位置，逐个解析文件。
+
+**V2 签名数据块的格式**
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637292066946-cb513fd0-a6d9-4877-97a4-a11f6cc69c5a.png)
+
+该分块包含多个“ID-值”对，所采用的封装方式有助于更轻松地在 APK 中找到该分块。APK 的 v2 签名会存储为一个“ID-值”对，其中 ID 为 0x7109871a 保存 apk 的签名信息。
+
+签名块的末尾是一个魔数，也就是‘APK Sig Block 42’的 ASCII 码。
+
+**签名信息的具体结构**
+
+“APK 签名方案 v2 分块”存储在“APK 签名分块”内，ID 为 0x7109871a。
+
+“APK 签名方案 v2 分块”的格式如下（所有数字值均采用小端字节序，所有带长度前缀的字段均使用 uint32 值表示长度）：
+
+- 带长度前缀的 signer（带长度前缀）序列：
+
+- - 带长度前缀的 signed data：
+
+- - - 带长度前缀的 digests（带长度前缀）序列：
+
+- - - - signature algorithm ID (uint32)
+      - （带长度前缀）digest - 请参阅[受完整性保护的内容](https://source.android.google.cn/security/apksigning/v2?hl=zh-cn#integrity-protected-contents)
+
+- - - 带长度前缀的 X.509 certificates 序列：
+
+- - - - 带长度前缀的 X.509 certificate（ASN.1 DER 格式）
+
+- - - 带长度前缀的 additional attributes（带长度前缀）序列：
+
+- - - - ID (uint32)
+      - value（可变长度：附加属性的长度 - 4 个字节）
+
+- - 带长度前缀的 signatures（带长度前缀）序列：
+
+- - - signature algorithm ID (uint32)
+    - signed data 上带长度前缀的 signature
+
+- - 带长度前缀的 public key（SubjectPublicKeyInfo，ASN.1 DER 形式）
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637292251949-a290643a-011e-4cc8-a7d6-69b58760a5de.png)
+
+**V2 摘要计算方式**
+
+第 1、3 和 4 部分的摘要采用以下计算方式，类似于两级 [Merkle 树](https://en.wikipedia.org/wiki/Merkle_tree)。每个部分都会被拆分成多个大小为 1MB（220 个字节）的连续块。每个部分的最后一个块可能会短一些。每个块的摘要均通过字节 0xa5 的串联、块的长度（采用小端字节序的 uint32 值，以字节数计）和块的内容进行计算。顶级摘要通过字节 0x5a 的串联、块数（采用小端字节序的 uint32 值）以及块的摘要的连接（按照块在 APK 中显示的顺序）进行计算。摘要以分块方式计算，以便通过并行处理来加快计算速度。
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637303311648-f1c266b7-fba4-4349-b4d6-7c1c35111f21.png)
+
+**防回滚保护**
+
+攻击者可能会试图在支持对带 v2 签名的 APK 进行验证的 Android 平台上将带 v2 签名的 APK 作为带 v1 签名的 APK 进行验证。为了防范此类攻击，带 v2 签名的 APK 如果还带 v1 签名，其 META-INF/_.SF 文件的主要部分中必须包含 X-Android-APK-Signed 属性。该属性的值是一组以英文逗号分隔的 APK 签名方案 ID（v2 方案的 ID 为 2）。在验证 v1 签名时，对于此组中验证程序首选的 APK 签名方案（例如，v2 方案），如果 APK 没有相应的签名，APK 验证程序必须要拒绝这些 APK。此项保护依赖于内容 META-INF/_.SF 文件受 v1 签名保护这一事实。请参阅 JAR 已签名的 APK 的验证部分。
+
+攻击者可能会试图从“APK 签名方案 v2 分块”中删除安全系数较高的签名。为了防范此类攻击，对 APK 进行签名时使用的签名算法 ID 的列表会存储在通过各个签名保护的 signed data 分块中。
+
+**签名验证**
+
+对“APK 签名方案 v2 分块”中的每个 signer 执行以下操作：
+
+1. 从 signatures 中选择安全系数最高的受支持 signature algorithm ID。安全系数排序取决于各个实现/平台版本。
+2. 使用 public key 并对照 signed data 验证 signatures 中对应的 signature。（现在可以安全地解析 signed data 了。）
+3. 验证 digests 和 signatures 中的签名算法 ID 列表（有序列表）是否相同。（这是为了防止删除/添加签名。）
+4. 使用签名算法所用的同一种摘要算法[计算 APK 内容的摘要](https://source.android.google.cn/security/apksigning/v2?hl=zh-cn#integrity-protected-contents)。
+5. 验证计算出的摘要是否与 digests 中对应的 digest 一致。
+6. 验证 certificates 中第一个 certificate 的 SubjectPublicKeyInfo 是否与 public key 相同。
+
+## v3 签名机制
+
+为了保持与 v1 APK 格式的向后兼容性，v2 和 v3 APK 签名存储在“APK 签名分块”内紧邻 ZIP Central Directory 前面。
+
+v3 APK 签名分块的格式与 v2 相同。APK 的 v3 签名会存储为一个“ID-值”对，其中 ID 为 0xf05368c0。
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637311968516-9c9164d9-03ed-48bd-a28c-f88e4a421df0.png)
+
+v3 版本签名验证证书步骤：
+
+- 利用 PublicKey 解密 Signature，得到 SignerData 的 hash 明文
+- 计算 SignerData 的 hash 值
+- 两个值进行比较，如果相同则认为 APK 没有被修改过，解析出 SignerData 中的证书。否则安装失败
+- 逐个解析出 level 块证书并验证，并保存为这个应用的历史证书
+- 如果是第一次安装，直接将证书与历史证书一并保存在应用信息中
+- 如果是更新安装，验证之前的证书与历史证书，是否与本次解析的证书或者历史证书中存在相同的证书，其中任意一个证书符合即可安装
+
+![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1637312149010-e182b936-62dd-468d-bc15-24cc1afd8fdf.png)
+
+每一个 level 块的结构
+
+proof-of-rotation 存储在“APK 签名方案 v3 分块”内，ID 为 0x3ba06f8c。其格式为：
+
+带长度前缀的 levels（带长度前缀）序列：
+
+- 带长度前缀的 signed data（由上一个证书签名 - 如果存在上一个证书）
+
+- - 带长度前缀的 X.509 certificate（ASN.1 DER 形式）
+
+- - - signature algorithm ID (uint32) - 上一级证书使用的算法
+    - flags (uint32) - 这些标记用于指示此证书是否应该在 self-trusted-old-certs 结构中，以及针对哪些操作。
+
+- - signature algorithm ID (uint32) - 必须与下一级签名数据部分中的相应 ID 一致。
+  - 上述 signed data 上带长度前缀的 signature
+
+新特性场景举例
+
+其实就是当开发者需要更换证书时，即可直接用新证书新的私钥进行签名。不过为了让老应用相信新的证书，则需要用老证书来保证。举个例子，有两个 level 块：level 1 与 level 2：
+
+- level 1 放置老证书的信息
+- level 2 中放置新证书的信息以及这段数据的签名
+- level 2 中的签名是由老私钥进行签名的，则需要用老证书的公钥来验证
+- 校验原来的证书与 level 1 相同，则相信本次更新的 level 2 的证书，即签名 APK 的证书
+
+完成安装并记录新证书信息

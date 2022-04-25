@@ -1,0 +1,53 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: false
+mathjax: false
+
+# Sidebar
+sidebar: right
+widgets:
+  - category
+  - tag
+  - tagcloud
+  - archive
+  - recent_posts
+  - links
+
+# Links
+links:
+  主题作者: http://arvinxiang.com
+  热前端: http://reqianduan.com
+  远程.work: http://yuancheng.work
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+# Duoshuo
+duoshuo_shortname: reqianduan
+
+# Baidu share
+baidushare: true
+
+# valine comment system. https://valine.js.org
+valine:
+  enable: true # if you want use valine,please set this value is true
+  appId: leJaUhLOcIuK8bvhD0N07LGp-gzGzoHsz #Hwbkde2X8IYU5aIRpMreJdHa-MdYXbMMI # leancloud application app id
+  appKey: 8xA4yeCjHg3DTAfXwMO4NVcq #1JmY1bE7FF8wmCtmFlFdrdna # leancloud application app key
+  notify: true # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+  verify: false # valine verify code (true/false)
+  pageSize: 10 # comment list page size
+  avatar: mm # gravatar style https://valine.js.org/#/avatar
+  lang: zh-cn # i18n: zh-cn/en
+  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header info
