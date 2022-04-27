@@ -1,8 +1,8 @@
 ---
 title: git 笔记
-category: 笔记
 date: 2022-04-26 09:58:19
 tags: git
+category: git
 ---
 
 
