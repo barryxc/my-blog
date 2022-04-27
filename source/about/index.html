@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about me</title>
+
+    <style>
+        @keyframes test {
+            0% {
+                transform: rotatey(0deg) rotatex(10deg);
+            }
+
+            100% {
+                transform: rotatey(360deg) rotatex(10deg);
+            }
+        }
+
+        * {
+            left: 0%;
+            right: 0%;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        #container {
+            position: relative;
+            margin: 100px auto 0px;
+            width: 200px;
+            height: 200px;
+            animation-name: test;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            transform: rotatex(-30deg);
+            transform-style: preserve-3d;
+            /* transform: rotateY(60deg) ; */
+        }
+
+        #container div {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .home {
+            background-color: red;
+            transform: translateZ(200px);
+        }
+
+        .end {
+            background-color: white;
+        }
+
+        .top {
+            transform: rotatex(90deg) translateY(100px) translateZ(-100px);
+            background-color: blue;
+        }
+
+        .bottom {
+            transform: rotatex(-90deg) translateY(-100px) translateZ(-100px);
+            background-color: yellow;
+        }
+
+        .left {
+            transform: rotateY(90deg) translateX(-100px) translateZ(100px);
+            background-color: aqua;
+        }
+
+        .right {
+            transform: rotateY(-90deg) translateX(100px) translateZ(100px);
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div>高级开发 ，从事 android 相关工作。喜欢搞搞技术</div>
+    <div id="container">
+        <div class="home">工作经历：alibaba</div>
+        <div class="end">联系我：18157168289</div>
+        <div class="top">项目经验：sdk & app</div>
+        <div class="bottom">技术能力: c++ & java & kotlin & js & hybrid & vue</div>
+        <div class="left">自我评价：passionate</div>
+        <div class="right">职业素养：self-motivation</div>
+    </div>
+</body>
+
+
+
+
+</html>

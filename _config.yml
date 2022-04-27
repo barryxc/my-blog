@@ -6,8 +6,8 @@
 title: "Barry"
 subtitle: "行成于思、毁于随"
 description: "android"
-keywords: ""
-author: barry
+keywords: "123"
+author: Barry
 language: zh-CN
 timezone: ""
 
@@ -28,7 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: about
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -57,7 +57,7 @@ prismjs:
   tab_replace: ""
 
 # Home page setting
-# path: "barry.github.io"
+# path: ""
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
@@ -113,9 +113,9 @@ feed:
   template:
 
 ## Themes: https://hexo.io/themes/
-theme: landscape
+# theme: landscape
 # theme: landscape-plus-1.0.6
-# theme: next
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -123,3 +123,9 @@ deploy:
   type: "git"
   repo: "git@github.com:barryxc/barry.github.io.git"
   branch: gh-pages
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
