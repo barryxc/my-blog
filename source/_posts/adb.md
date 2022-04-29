@@ -5,6 +5,15 @@ tags: adb android
 category: adb
 ---
 
+## 查看缓存文件
+
+```
+adb shell
+run-as xxx包名
+cd shared_prefs
+cat xxx文件名
+```
+
 ## 抓取日志
 
 ```shell
@@ -12,14 +21,14 @@ adb shell logcat --pid=xxx "tag:priority"  > ~/desktop/xx
 .log
 ```
 
+<!-- more -->
+
 ## 截屏
 
 ```shell
 adb shell screencap /sdcard/xx.png
 adb shell pull /sdcard/xx.png ~/desktop/xx.png
 ```
-
-<!-- more -->
 
 ## 录屏
 
