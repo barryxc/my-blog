@@ -2,7 +2,10 @@
 title: android https 抓包
 category: android
 date: 2022-04-26 11:30:54
-tags: android Charles https 
+tags:
+  - android
+  - Charles
+  - https
 ---
 
 ### 网络安全配置
@@ -63,15 +66,11 @@ Charles:
 有的手机 .pem 格式的证书没法直接点击安装，需要修改后缀为.crt 格式，才能点击安装
 ```
 
-
-
 ### 开启代理
 
 ![img](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1618564185975-da945211-f8fe-4f36-82e3-c4fe9e63239d.png)
 
-
-
-## 
+##
 
 ## 踩坑：chls 证书和电脑是绑定的关系
 

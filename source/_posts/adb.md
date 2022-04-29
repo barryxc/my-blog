@@ -1,7 +1,9 @@
 ---
 title: 常用adb命令
 date: 2022-04-24 12:36:49
-tags: adb android
+tags:
+  - adb
+  - android
 category: adb
 ---
 
