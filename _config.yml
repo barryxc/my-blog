@@ -131,7 +131,7 @@ search:
   format: html
 
 encrypt: # hexo-blog-encrypt
-  abstract: 有东西被加密了, 请输入密码查看.
+  abstract: 文章被加密了, 请输入密码查看.
   message: 您好, 这里需要密码.
   tags:
     - { name: private, password: xc1123 }
