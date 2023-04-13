@@ -9,10 +9,10 @@ category:
 
 方法一：
 ```java
-nm xxxso文件
+nm ${so文件}
 ```
 
 方法二：
 ```java
-objdump -syms  xxxso文件
+objdump --syms  ${so文件}
 ```
