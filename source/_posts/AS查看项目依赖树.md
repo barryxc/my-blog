@@ -8,8 +8,8 @@ category:
 #### 方式一
 
 ```java
-./gradlew :模块名:dependencies  //查看单独模块的依赖
-./gradlew :app:dependencies --configuration compile //查看项目的编译依赖
+./gradlew :模块名:dependencies  --scan 
+./gradlew :模块名:dependencies  > xx.log 
 ```
 
 #### 方式二
