@@ -11,6 +11,8 @@ category: sqlite3
 
 https://www.sqlite.org/download.html
 
+<!-- more --> 
+
 ## 常用命令
 
 | 命令                           | 描述                   |
@@ -27,7 +29,7 @@ https://www.sqlite.org/download.html
 | `.quit`;                       | 退出sqlite3 shell程序  |
 | `.help`;                       | 显示帮助信息  |
 
-
+<!-- more -->
 
 ## 格式化输出
 
