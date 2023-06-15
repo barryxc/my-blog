@@ -402,8 +402,8 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/barryxc
 
 
 # ---------------------------------------------------------------
@@ -853,7 +853,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
@@ -925,3 +925,11 @@ vendors:
 css: css
 js: js
 images: images
+
+
+post_wordcount:
+  item_text: true # 文章 字数统计 阅读时长 使用图标 还是 文本表示
+  wordcount: true
+  min2read: true
+  totalcount: true
+  separated_meta: true # 是否换行显示 字数统计 及 阅读时长

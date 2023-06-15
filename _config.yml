@@ -62,8 +62,13 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ""
-  per_page: 10
+  per_page: 5
   order_by: -date
+
+archive_generator:
+  per_page: 50
+  yearly: true
+  monthly: true
 
 # Category & Tag
 default_category: uncategorized
@@ -124,12 +129,16 @@ deploy:
   repo: "git@github.com:barryxc/barry.github.io.git"
   branch: gh-pages
 
+##本地搜索插件
 search:
   path: search.xml
   field: post
   content: true
   format: html
+  limit: 10000
+  
 
+##加密插件
 encrypt: # hexo-blog-encrypt
   abstract: 文章被加密了, 请输入密码查看.
   message: 您好, 这里需要密码.
@@ -137,3 +146,5 @@ encrypt: # hexo-blog-encrypt
     - { name: private, password: xc1123 }
   wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
   wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+
+  
