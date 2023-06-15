@@ -5,4 +5,17 @@ tags:
 category:
 ---
 
-![img](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1650432820991-e5116c1d-b7d2-42ac-a4d8-30214c20c2e2.png)
+| 快捷键   | 描述           |
+| -------- | -------------- |
+| `Ctrl+A` | 移动光标至行首 |
+| `Ctrl+B` |     光标向后移动一个单词         |
+| `Ctrl+C` |     终止当前执行           |
+| `Ctrl+D` |       退出当前Shell         |
+| `Ctrl+E` |       移动光标至行尾         |
+| `Ctrl+F` |     光标向前移动一个单词         |
+| `Ctrl+H` |     与退格键相同       |
+| `Ctrl+L` |     清屏     |
+| `Ctrl+W` |     删除光标之前的单词     |
+| `Ctrl+U` |       删除光标前所有文字         |
+| `Command+K` |     清屏     |
+| `Tab` |         自动补全文件和文件夹的名称       |
