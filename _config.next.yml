@@ -98,7 +98,7 @@ open_graph:
 menu:
   home: / || fa fa-home
   about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
+#  tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
 #  schedule: /schedule/ || fa fa-calendar
@@ -108,7 +108,7 @@ menu:
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -119,7 +119,7 @@ menu_settings:
 sidebar:
   # Sidebar Position.
   position: left
-  #position: right
+#  position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -177,7 +177,7 @@ links_settings:
   layout: block
 
 links:
-  Title: https://github.com/barryxc
+#  title: https://github.com/barryxc
   
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).

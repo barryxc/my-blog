@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "Barry"
-subtitle: "行成于思、毁于随"
-description: "android"
-keywords: "123"
-author: Barry
+title: "博客"
+subtitle: ""
+description: ""
+keywords: "android、java、sql、c++"
+author: barry
 language: zh-CN
 timezone: ""
 
