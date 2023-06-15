@@ -469,15 +469,15 @@ Hybrid App的本质，其实是在原生的 App 中，使用 WebView 作为容�
 
   ```java
   c++层代码错误可以分为两种：
-
+  
   1. std::exception 异常：
   2. fatal signal异常：
-
+  
      常见的软中断信号：
        -	SIGFPE 浮点异常
        -	SIGSEGV 无效的内存引用 (segmentation violation)
        -	SIGILL 非法指令
-
+  
     如何捕获？
     	注册信号处理函数，然后向java层发送消息，通知抓取logcat日志信息。然后通过addr2line等工具对dump文件函数地址转换为对应的代码行数。
   ```
@@ -520,6 +520,7 @@ Hybrid App的本质，其实是在原生的 App 中，使用 WebView 作为容�
 
 - [HMAC](https://www.liaoxuefeng.com/wiki/1016959663602400/1183198304823296)（Hash-based Message Authentication Code）
 - 非对称加密（两组秘钥双向加密解密）
+- MD5+加盐
 
 ## IP
 
