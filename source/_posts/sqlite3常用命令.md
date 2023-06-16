@@ -20,7 +20,7 @@ https://www.sqlite.org/download.html
 | `sqlite3  test.db`             | 创建或者打开数据库     |
 | `.show`                        | 显示各种设置的当前值   |
 | `.mode column`                 | 设置为表格模式         |
-| `.header on`                   | 展示表格头             |
+| `.headers on`                  | 展示表格头             |
 | `.timer on`                    | 开启 cpu 定时器        |
 | `.tables`                      | 查看有哪些表           |
 | `.schema`                      | 查看表概要             |
@@ -32,6 +32,10 @@ https://www.sqlite.org/download.html
 <!-- more -->
 
 ## 格式化输出
+
+点命令后不能跟分号`;`
+
+`sql`语句后必须跟分号`;`
 
 您可以使用下列的点命令来格式化输出为本教程下面所列出的格式：
 
