@@ -4,7 +4,7 @@ date: 2022-04-24 12:36:49
 tags:
   - adb
   - android
-category: adb
+category: android
 ---
 
 ## 查看缓存文件

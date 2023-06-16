@@ -1,7 +1,7 @@
 ---
 title: sqlite3常用命令
 date: 2023-06-15 16:04:12
-tags: sqlite3
+tags: sql
 category: 数据库
 ---
 

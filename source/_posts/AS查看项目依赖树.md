@@ -1,8 +1,8 @@
 ---
 title: AS查看项目依赖树
 date: 2023-03-31 14:33:24
-tags:
-category:
+tags: as
+category: android
 ---
 
 #### 方式一

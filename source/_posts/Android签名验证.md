@@ -1,8 +1,8 @@
 ---
 title: Android签名验证
 date: 2023-03-31 14:31:47
-tags:
-category:
+tags: 签名
+category: android
 ---
 
 ```shell

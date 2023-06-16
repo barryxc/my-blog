@@ -2,7 +2,7 @@
 title: typora 快捷键
 date: 2022-04-27
 tags: typora
-category: typora
+category: 快捷键
 ---
 
 # 一级标题 `⌘1`

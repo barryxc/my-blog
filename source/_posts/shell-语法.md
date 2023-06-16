@@ -2,7 +2,7 @@
 title: shell 语法
 date: 2022-04-28 00:13:48
 tags: shell
-category: shell
+category: 笔记
 ---
 
 ## 变量声明

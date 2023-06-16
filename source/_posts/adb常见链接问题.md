@@ -2,7 +2,7 @@
 title: adb常见链接问题
 date: 2023-03-31 14:39:27
 tags:
-category:
+category: 笔记
 ---
 
 手机问题

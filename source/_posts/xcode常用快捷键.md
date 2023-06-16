@@ -1,8 +1,8 @@
 ---
 title: xcode常用快捷键
 date: 2023-03-31 14:13:15
-tags:
-category:
+tags: Xcode
+category: 快捷键
 ---
 
 - 快速搜索文件：command⌘+shift⇧+o (open)

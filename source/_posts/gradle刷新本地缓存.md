@@ -1,8 +1,8 @@
 ---
 title: gradle刷新本地缓存
 date: 2023-03-31 14:38:32
-tags:
-category:
+tags: gradle
+category: android
 ---
 
 方式1 ：If you are using a recent version of Gradle, you can use --refresh-dependencies option.

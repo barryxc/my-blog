@@ -1,8 +1,8 @@
 ---
 title: sudo详解
 date: 2023-06-15 15:44:49
-tags:
-category:
+tags: shell
+category: 笔记
 ---
 
 

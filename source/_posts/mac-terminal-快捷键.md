@@ -1,8 +1,8 @@
 ---
 title: mac terminal 快捷键
-category: mac
+category: 快捷键
 date: 2022-04-25 23:24:50
-tags: termianl
+tags: terminal
 ---
 
 常用快捷键

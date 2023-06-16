@@ -2,7 +2,7 @@
 title: hexo 博客搭建教程
 date: 2022-04-25 21:53:20
 tags: hexo
-category: "hexo"
+category: 笔记
 ---
 
 本文详细介绍了从开始搭建博客到自定义高级功能所经历的整个过程。

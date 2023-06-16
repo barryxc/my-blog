@@ -2,7 +2,7 @@
 title: git 笔记
 date: 2022-04-26 09:58:19
 tags: git
-category: git
+category: 笔记
 ---
 
 什么是 [Git](https://git-scm.com/) ？
