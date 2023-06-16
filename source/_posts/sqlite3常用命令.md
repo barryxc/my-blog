@@ -1,8 +1,8 @@
 ---
 title: sqlite3常用命令
 date: 2023-06-15 16:04:12
-tags:
-category: sqlite3
+tags: sqlite3
+category: 数据库
 ---
 
 ### 官方下载地址
