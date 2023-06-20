@@ -1,5 +1,5 @@
 ---
-title: shell 语法
+title: shell-语法
 date: 2022-04-28 00:13:48
 tags: shell
 category: 笔记

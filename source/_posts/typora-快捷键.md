@@ -1,5 +1,5 @@
 ---
-title: typora 快捷键
+title: typora-快捷键
 date: 2022-04-27
 tags: typora
 category: 快捷键

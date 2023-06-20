@@ -1,5 +1,5 @@
 ---
-title: 常用adb命令
+title: 高级adb调试命令
 date: 2022-04-24 12:36:49
 tags:
   - adb
@@ -7,20 +7,19 @@ tags:
 category: android
 ---
 
-## 查看缓存文件
-
-```
-adb shell
-run-as xxx包名
-cd shared_prefs
-cat xxx文件名
-```
-
-## 抓取日志
+## 用某个用户的权限来执行
 
 ```shell
-adb shell logcat --pid=xxx "tag:priority"  > ~/desktop/xx
-.log
+run-as $package_name
+```
+
+例如：查看sp文件
+
+```shell
+adb shell
+run-as $package_name
+cd shared_prefs
+cat $file_name
 ```
 
 <!-- more -->
@@ -28,27 +27,27 @@ adb shell logcat --pid=xxx "tag:priority"  > ~/desktop/xx
 ## 截屏
 
 ```shell
-adb shell screencap /sdcard/xx.png
-adb shell pull /sdcard/xx.png ~/desktop/xx.png
+adb shell screencap /sdcard/$file_name
+adb shell pull /sdcard/$file_name ~/desktop/$file_name
 ```
 
 ## 录屏
 
 ```shell
-adb shell record /sdcard/xx.mp4
+adb shell record /sdcard/$video_file_name
 ```
 
 ## wifi 调试
 
 ```shell
 adb tcpip 5555
-adb connect 192.168.xx.xx:5555
+adb connect $ip_address:5555
 ```
 
 ## 查看指定包名的进程 id
 
 ```shell
-adb shell ps | grep "包名"
+adb shell ps | grep '$package_name'
 ```
 
 ## 获取 apk 签名
@@ -64,7 +63,7 @@ keytool -printcert -file XXX.RSA即可查看签名信息。
 
 ```shell
 #keystore在jdk安装目录bin文件夹下面
-keytool -list -v -keystore xxx(keystore文件)
+keytool -list -v -keystore $keystore_file
 ```
 
 ## 获取手机分辨率
@@ -89,13 +88,13 @@ adb shell pm list package
 
 ```shell
  adb shell pm path 包名
- adb pull xxx.apk ~/desktop/xx.apk  #转储apk
+ adb pull xxx.apk ~/desktop/$apk_file_name  #转储apk
 ```
 
 ## 清除应用数据
 
 ```shell
-adb shell pm clear 包名
+adb shell pm clear $package_name
 ```
 
 ## 覆盖安装 apk
@@ -108,8 +107,10 @@ adb install -r xxx.apk  覆盖安装
 ## 卸载 apk
 
 ```shell
-adb uninstall 包名
-adb uninsatll -k 包名  保留数据卸载(adb shell pm uninstall -k  xxx )
+adb uninstall $package_name
+adb uninsatll -k $package_name  
+# 保留数据卸载 
+adb shell pm uninstall -k  $package_name 
 ```
 
 ## AAPT 查看 apk 信息
@@ -118,7 +119,7 @@ adb uninsatll -k 包名  保留数据卸载(adb shell pm uninstall -k  xxx )
 #列出压缩文件(zip,jar,apk)中的目录内容
  aapt l[ist] [-v] [-a] xxx.{zip,jar,apk}
  #转储apk文件信息
- aapt dump badging xxx.apk
+ aapt dump badging $file_name.apk
 ```
 
 ## 抓取数据库
@@ -145,9 +146,34 @@ adb -s xxx（手机序列号） reboot
 
 ## 备份与还原
 
-```
+```shell
 adb backup -f xxx.ab -noapk xxxx包名
 adb restore xxx.ab
 
 备份文件解析工具：safemobile 手机芯片取证系统
+```
+
+## 抓取系统崩溃和ANR日志
+
+```shell
+输出系统崩溃日志
+系统应用：
+adb shell dumpsys dropbox system_app_crash --print > crash.txt
+adb shell dumpsys dropbox system_app_anr --print > anr.txt
+三方应用：
+adb shell dumpsys dropbox data_app_crash --print > crash.txt
+adb shell dumpsys dropbox data_app_anr --print > anr.txt
+```
+
+## 查看内存信息
+
+```shell
+#[查看系统进程内存信息分布情况]
+adb shell dumpsys meminfo $package_name
+#[查看当前应用内存情况]
+adb shell dumpsys meminfo $package_name
+#[查看安装包信息]
+adb shell dumpsys package $package_name
+#[查看当前应用安装包信息]
+adb shell dumpsys package $package_name
 ```

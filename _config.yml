@@ -132,8 +132,8 @@ deploy:
 
 ##加密插件
 encrypt: # hexo-blog-encrypt
-  abstract: 文章被加密了, 请输入密码查看.
-  message: 您好, 这里需要密码.
+  abstract: encrypted
+  message: input password
   tags:
     - { name: private, password: xc1123 }
   wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
