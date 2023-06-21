@@ -1,5 +1,5 @@
 ---
-title: 常见快捷键
+title: terminal快捷键
 date: 2023-03-31 14:40:06
 tags: shell
 category: 快捷键
