@@ -1,8 +1,8 @@
 ---
 title: source 命令详解
 date: 2023-06-15 16:47:25
-tags: shell 命令
-category: 笔记
+tags: source
+category: shell
 ---
 
 ## 作用
