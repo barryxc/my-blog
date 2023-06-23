@@ -98,6 +98,7 @@ open_graph:
 menu:
   home: / || fa fa-home
   about: /about/ || fa fa-user
+  # pets: /pets/ || fa fa-user
 #  tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
@@ -270,7 +271,7 @@ reward_settings:
   animation: true
 
 reward:
-  wechatpay: /images/wechatpay.png
+  wechatpay: /images/wechat.png
   #alipay: /images/alipay.png
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
