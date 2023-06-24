@@ -7,7 +7,11 @@ category: shell
 
 ## linux 命令大全
 
-https://www.runoob.com/linux/linux-command-manual.html
+- [Runoob](https://www.runoob.com/linux/linux-command-manual.html)
+- [鸟哥](https://man.niaoge.com/)
+- [中文手册](http://linux.51yip.com/)
+
+- [在线查询网站](https://www.linuxcool.com/)
 
 | **1、文件管理**                                              |                                                              |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
