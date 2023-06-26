@@ -49,24 +49,74 @@ echo $SHELL
 #!/bin/sh
 ```
 
-### 字符串
+### 字符串处理
 
 ```shell
 str="hello world!"
 
 echo "定义字符串 ${str}"
+#计算字符串长度
 echo "字符串的长度为 ${#str}"
-echo "截取索引从1开始，长度为4的子串 ${str:1:4}"
+#截取字符串
+echo "截取索引从1开始，长度为4的子串 ${str:start:length}"
+#字符串替换
+echo "截取索引从1开始，长度为4的子串 ${str//${oldstr}/${newstr}}"
+```
+
+### 正则匹配
+
+```shell
+str="hello world"
+#方式一：
+if [[ $(echo "${str}" | grep -E '^he.*ld$') ]]; then
+    echo "匹配成功"
+fi
+# ---------- ---------- ---------- ---------- ----------
+#方式二 正则表达式要用单引号引起来
+if expr match "$str" 'he.*ld' > /dev/null; then
+    echo "匹配成功"
+fi
+#等同
+if expr  "$str" : 'he.*ld' > /dev/null; then
+    echo "匹配成功"
+fi
 ```
 
 ### 数组
 
-```shell
-a=(234 2 3 4 5 6)
+#### 索引数组
 
-echo "定义数组 a=(${a[*]})"
-echo "数组的长度为 ${#a[*]}"
-echo "数组第一个元素的长度${#a[0]}"
+```shell
+declare -a arr
+
+#赋值
+arr=(234 2 3 4 5 6)
+#添加数组元素
+arr+="ss"
+#所有元素
+echo "${a[*]}"
+#数组的长度
+echo "数组的长度为 ${#arr[*]}"
+#访问元素
+echo "数组第一个元素的长度${#arr[0]}"
+```
+
+#### 关联数组
+
+```shell
+declare -A map 
+
+map["google"]="www.google.com"
+map["baidu"]="www.baidu.com"
+
+#访问所有元素
+echo "${a[*]}"
+#获取数组的长度
+echo "${#a[*]}"
+#访问所有key
+echo "${!a[*]}"
+#根据key访问元素
+echo "${a[${key}]}"
 ```
 
 <!--more-->
