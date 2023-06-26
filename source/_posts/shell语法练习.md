@@ -5,6 +5,14 @@ tags: shell
 category: shell
 ---
 
+[牛客网练习](https://www.nowcoder.com/exam/oj?page=1&tab=SHELL%E7%AF%87&topicId=195)
+
+## 查看可用的shell
+
+```
+cat /etc/shells
+```
+
 ## shebang
 
 ```shell

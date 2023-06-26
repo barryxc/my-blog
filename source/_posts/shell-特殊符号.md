@@ -1,11 +1,13 @@
 ---
-title: shell-特殊符号含义
+title: shell 中各种括号的作用()、(())、[]、[[]]、{}
 date: 2023-06-24 13:05:13
 tags: shell
 category: shell
 ---
 
-## `$()和 ` ``**
+>  菜鸟教程 https://www.runoob.com/w3cnote/linux-shell-brackets-features.html
+
+## `$()和 ` ``
 
 ```
 在 bash shell 中，$( ) 与` ` (反引号) 都是用来做命令替换用(commandsubstitution)的。
@@ -35,7 +37,13 @@ BB
 ${ }的功能远不止于此，详见下表。
 ```
 
-## `$[] $(()) :`
+<!--more-->
+
+![img](https://p.ipic.vip/10tyti.jpg)
+
+![img](https://p.ipic.vip/z0483e.png)
+
+## `$[] $(())`
 
 ```
 它们是一样的，都是进行数学运算的。支持+ - * / %：分别为 “加、减、乘、除、取模”。但是注意，bash只能作整数运算，对于浮点数是当作字符串处理的。
@@ -68,6 +76,12 @@ echo $((16#2a)) 结果为 42 (16进位转十进制)
 ```
 它们分别是[ ]的针对数学比较表达式和字符串表达式的加强版。
 其中(( ))，不需要再将表达式里面的大小于符号转义，除了可以使用标准的数学运算符外，还增加了以下符号：
+```
+
+![img](https://p.ipic.vip/4z6slq.jpg)
+
+```
 在 [[ ]]中增加了另一个特性：模式匹配
 ```
 
+[转载自](https://blog.csdn.net/x1269778817/article/details/46535729)

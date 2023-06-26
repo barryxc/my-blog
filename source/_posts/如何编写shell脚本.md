@@ -10,6 +10,7 @@ category: shell
 
 ### 如何编写 shell  脚本?
 
+* [升级bash](https://itnext.io/upgrading-bash-on-macos-7138bd1066ba)
 * 选择编辑器
 * 安装 shell check 语法检查工具
 
