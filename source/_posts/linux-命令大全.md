@@ -8,10 +8,9 @@ category: shell
 ## linux 命令大全
 
 - [Runoob](https://www.runoob.com/linux/linux-command-manual.html)
-- [鸟哥](https://man.niaoge.com/)
-- [中文手册](http://linux.51yip.com/)
-
-- [在线查询网站](https://www.linuxcool.com/)
+- [鸟哥Linux命令大全](https://man.niaoge.com/)
+- [Linux命令手册](http://linux.51yip.com/)
+- [Linux命令大全(手册)](https://www.linuxcool.com/)
 
 <!--more-->
 
