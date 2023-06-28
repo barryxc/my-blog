@@ -11,6 +11,7 @@ category: shell
 - [鸟哥Linux命令大全](https://man.niaoge.com/)
 - [Linux命令手册](http://linux.51yip.com/)
 - [Linux命令大全(手册)](https://www.linuxcool.com/)
+- [LinuxCommands.site](https://www.linuxcommands.site/)]
 
 <!--more-->
 
