@@ -124,3 +124,29 @@ category: shell
 ## 扩展文章
 
 - [Linux 常用命令全拼](https://www.runoob.com/w3cnote/linux-command-full-fight.html)
+
+## 复制粘贴
+
+1. MAC
+
+```shell
+pbcopy < $file
+pbpaste > $file
+```
+
+2. linux 
+
+```shell
+#需要安装xclip
+xclip < $file
+xclip > $file
+```
+
+3. windows
+
+```
+clip < $file
+clip > $file
+```
+
+   
