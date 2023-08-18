@@ -1,5 +1,5 @@
 ---
-title: shell 中各种括号的作用()、(())、[]、[[]]、{}
+title: shell 中各种括号的作用
 date: 2023-06-24 13:05:13
 tags: shell
 category: shell
@@ -34,14 +34,10 @@ $ echo $AB
 $ echo ${A}B
 BB
 
-${ }的功能远不止于此，详见下表。
+${ }的功能远不止于此.
 ```
 
 <!--more-->
-
-![img](https://p.ipic.vip/10tyti.jpg)
-
-![img](https://p.ipic.vip/z0483e.png)
 
 ## `$[] $(())`
 
