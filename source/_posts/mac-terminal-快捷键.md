@@ -7,14 +7,15 @@ tags: terminal
 
 常用快捷键
 
-```
-ctrl+a 光标移动到行首 ahead
-ctrl+e 光标移动到行首 end
-command + k 清屏（完全清除） kill
-ctrl + c 终止当前执行 cancel
-tab 自动补全
-```
+| 快捷键 | 功能                 |
+| ------ | -------------------- |
+| ⌃ ->   | 光标向前移动一个单词 |
+| ⌃  <-  | 光标向后移动一个单词 |
+| ⌃ A    | 光标移动到行尾       |
+| ⌃ E    | 光标移动到行首       |
+| ⌃ U    | 清除当前行           |
+| ⌃ D    | 退出当前shell        |
+| ⌃ C    | 中断信号             |
+| ⌘ K    | 清屏                 |
 
 <!-- more -->
-
-![img](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1650432820991-e5116c1d-b7d2-42ac-a4d8-30214c20c2e2.png)
