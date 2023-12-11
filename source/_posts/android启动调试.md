@@ -2,7 +2,7 @@
 title: android启动调试
 date: 2023-12-11 22:58:15
 tags:
-category:调试
+category: 调试
 ---
 
 #### **冷启动开启调试方式**
