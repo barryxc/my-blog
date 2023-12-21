@@ -1,6 +1,6 @@
 ---
 title: explicit关键词
-date: 2023-12-22 00:23:38
+date: 2021-12-22 00:23:38
 tags: c++
 category: c++
 ---
