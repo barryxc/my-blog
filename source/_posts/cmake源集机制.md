@@ -1,9 +1,11 @@
 ---
-title: cmake构建知识
+title: cmake源集机制
 date: 2023-12-26 17:16:55
 tags: cmake
 category: cmake
 ---
+
+[cmake](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 
 在 CMake 中，并没有一个默认机制来自动查找源码文件。CMake 需要你在 `CMakeLists.txt` 配置文件中显式地指定源码文件。这意味着 CMake 不会去猜测或自动探测你的源码文件所在；你必须明确告诉 CMake 需要编译哪些文件。
 
