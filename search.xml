@@ -3104,14 +3104,11 @@
     <title>mac环境配置</title>
     <url>/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<ol>
-<li><p>在当前的目录中打开 <code>iterm2  </code>命令行工具<br> <img src="https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/jj8u2t.png?token=AE66NBI2G47EA5V2JZYPC2DFVE5RA" alt="jj8u2t"></p>
+<li><p>在当前的目录中打开 <code>iterm2  </code>命令行工具<br> <img src="https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/jj8u2t.png?token=AE66NBPRTYMLFYIODDFRLI3FVE6SK" alt="jj8u2t"></p>
 </li>
 <li><p>添加当前目录到 PATH 中，可以避免每次执行文件时添加 <code>./</code>前缀</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
 <li><p>安装 <code>iterm2</code> 工具，安装 <code>oh-my-zsh</code> 插件</p>
 <p><code>iterm2:</code> <a href="https://iterm2.com/">https://iterm2.com/</a></p>
 <p><code>oh-my-zsh:</code> <a href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
@@ -3128,7 +3125,7 @@
 <li><input checked="" disabled="" type="checkbox"> <a href="https://nodejs.org/en">https://nodejs.org/en</a></li>
 </ul>
 </li>
-<li><p>通过 <code>typora</code> 图像设置安  <code>PicList</code> 图床软件, 设置 <code>github</code> 图床</p>
+<li><p>通过 <code>typora</code> 图像设置安装  <code>PicList</code> 图床软件, 设置 <code>github</code> 图床</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> <a href="https://piclist.cn/">https://piclist.cn/</a></li>
 </ul>
