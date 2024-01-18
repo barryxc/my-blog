@@ -357,7 +357,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/26/include-directories/">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/yuv%E8%BD%ACpng%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
@@ -375,7 +375,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/26/include-directories/" class="post-title-link" itemprop="url">include_directories和target_include_directories</a>
+          <a href="/2023/12/12/yuv%E8%BD%ACpng%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">yuv转png命令</a>
         </h2>
 
         <div class="post-meta-container">
@@ -386,7 +386,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-12-26 17:52:53" itemprop="dateCreated datePublished" datetime="2023-12-26T17:52:53+08:00">2023-12-26</time>
+      <time title="创建时间：2023-12-12 00:47:43" itemprop="dateCreated datePublished" datetime="2023-12-12T00:47:43+08:00">2023-12-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -394,15 +394,6 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cmake/" itemprop="url" rel="index"><span itemprop="name">cmake</span></a>
-        </span>
     </span>
 
   
@@ -415,120 +406,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
-<p><code>include_directories</code>是CMake中的一个命令，其作用是向项目中添加包含目录（<strong>即头文件搜索路径</strong>）。当编译器编译项目中的源代码文件时，它会在这些指定的目录中查找<code>#include</code>指令引用的头文件。</p>
-<p>使用 <code>include_directories</code> 命令可以使编译器搜索项目内外的附加目录，从而找到所需的头文件。这对于跨目录的项目结构或者使用第三方库非常有用。</p>
-<p>下面是一个<code>include_directories</code>的使用示例：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(includes /path/to/external/includes)</span><br></pre></td></tr></table></figure>
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -s 640x480  -i image.yuv  image.png</span><br></pre></td></tr></table></figure>
 
-<p>在这个例子中，<code>includes</code>是项目内的一个目录，指的是相对于当前<code>CMakeLists.txt</code>文件所在目录的相对路径。<code>/path/to/external/includes</code>是系统中某个外部库头文件的绝对路径。这条命令将这两个目录添加到编译器的头文件搜索路径中。</p>
-<p>一旦使用了<code>include_directories</code>，它会影响所有随后定义的目标（例如使用<code>add_executable</code>或者<code>add_library</code>定义的可执行文件或库）。如果你希望对特定目标设置包含目录而不影响其他的，应使用<code>target_include_directories</code>命令，它提供了更细粒度的控制。</p>
-<p>例如：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(MyExecutable main.cpp)</span><br><span class="line"><span class="keyword">target_include_directories</span>(MyExecutable PRIVATE includes)</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MyExecutable</code>仅会包含<code>includes</code>目录作为私有依赖，这意味着这个包含目录仅对<code>MyExecutable</code>可见，不会影响到其他目标。</p>
-<p>通常建议使用<code>target_include_directories</code>而非<code>include_directories</code>，因为前者更符合现代CMake的目标属性设置方式，允许更好的封装性和可重用性</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/26/add-subdirectory/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/26/add-subdirectory/" class="post-title-link" itemprop="url">add_subdirectory</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-12-26 17:50:08" itemprop="dateCreated datePublished" datetime="2023-12-26T17:50:08+08:00">2023-12-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cmake/" itemprop="url" rel="index"><span itemprop="name">cmake</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
-<p>在 Java 中，”submodule” 这个术语并不是官方的编程概念，而是通常用于描述较大项目中的组织结构，尤其是在使用 Maven 或 Gradle 这样的构建工具时。这些构建工具允许你创建多模块（multi-module）项目，其中每个模块可以有自己的构建生命周期和依赖管理。</p>
-<p>如果将 CMake 中的 <code>add_subdirectory</code> 命令与 Java 多模块项目的概念进行比较，那么可以说它们在概念上是相似的。<code>add_subdirectory</code> 允许你将一个目录（可以认为是一个模块或子项目）添加到主项目的构建过程中。这个目录通常包含它自己的 <code>CMakeLists.txt</code> 文件，定义了如何构建该目录中的代码。</p>
-<p>在 Java 的多模块项目中，每个模块也会有自己的构建配置文件（例如 Maven 的 <code>pom.xml</code>），定义了模块的构建过程和依赖。</p>
-<p>例如，在 Maven 中，你的项目结构可能如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">project/</span><br><span class="line">│</span><br><span class="line">├── pom.xml                 # 父项目的 Maven POM 文件</span><br><span class="line">│</span><br><span class="line">├── submodule1/</span><br><span class="line">│   └── pom.xml             # 子模块的 Maven POM 文件</span><br><span class="line">│</span><br><span class="line">└── ...</span><br></pre></td></tr></table></figure>
-
-<p>父项目的 <code>pom.xml</code> 文件会包含对所有子模块的引用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>submodule1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>submodule2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>将 Maven 的多模块项目和 CMake 中的 <code>add_subdirectory</code> 命令进行类比，它们都有以下相似之处：</p>
 <ul>
-<li>都是将一个较大的项目组织为更小、更易管理的组件或模块。</li>
-<li>每个模块或组件都有自己的构建配置和构建过程。</li>
-<li>主项目配置文件包含对这些子模块或组件的引用，并且管理整个构建过程。</li>
+<li>-s 宽x高、图像实际大小</li>
+<li>-i 输入文件 <code>yuv</code> 格式</li>
+<li>输出文件  <code>.png</code> 输出图像格式</li>
 </ul>
-<p>总之，尽管 CMake 和 Java 构建工具（如 Maven 或 Gradle）在技术细节上不同，<code>add_subdirectory</code> 与 Java 多模块项目的概念在组织和管理大型代码基础方面确实有一定的相似性。</p>
 
       
     </div>
@@ -555,7 +439,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/adb%E6%96%87%E6%A1%A3%E5%A4%A7%E5%85%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
@@ -573,7 +457,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/" class="post-title-link" itemprop="url">cmake源集机制</a>
+          <a href="/2023/12/12/adb%E6%96%87%E6%A1%A3%E5%A4%A7%E5%85%A8/" class="post-title-link" itemprop="url">adb文档大全</a>
         </h2>
 
         <div class="post-meta-container">
@@ -584,7 +468,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-12-26 17:16:55" itemprop="dateCreated datePublished" datetime="2023-12-26T17:16:55+08:00">2023-12-26</time>
+      <time title="创建时间：2023-12-12 00:40:19" itemprop="dateCreated datePublished" datetime="2023-12-12T00:40:19+08:00">2023-12-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -592,15 +476,6 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cmake/" itemprop="url" rel="index"><span itemprop="name">cmake</span></a>
-        </span>
     </span>
 
   
@@ -613,18 +488,97 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
-<p>在 CMake 中，并没有一个默认机制来自动查找源码文件。CMake 需要你在 <code>CMakeLists.txt</code> 配置文件中显式地指定源码文件。这意味着 CMake 不会去猜测或自动探测你的源码文件所在；你必须明确告诉 CMake 需要编译哪些文件。</p>
-<p>通常，你会在 <code>CMakeLists.txt</code> 文件中使用 <code>add_executable</code> 或者 <code>add_library</code> 命令来定义编译目标，并显式地列出构成该目标的所有源码文件。例如：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(MyExecutable main.cpp foo.cpp bar.cpp)</span><br></pre></td></tr></table></figure>
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Android Debug Bridge version 1.0.41</span><br><span class="line">Version 30.0.5-6877874</span><br></pre></td></tr></table></figure>
 
-<p>在这个例子中，<code>MyExecutable</code> 是目标的名字，<code>main.cpp</code>、<code>foo.cpp</code> 和 <code>bar.cpp</code> 是明确指定的源码文件。</p>
-<p>如果你有一组相对固定的源码文件，你可以简单地将它们全部列出。然而，对于较大的项目或者源码文件经常变动的情况，逐一列出所有文件可能会变得繁琐。为了简化这个过程，CMake 提供了一些命令来帮助你查找和指定源码文件，这些命令包括 <code>aux_source_directory</code> 和 <code>file(GLOB ...)</code>。虽然这些命令可以帮助收集源码文件，但它们通常不是最佳实践，因为它们无法跟踪文件系统中的变化（例如，当你添加或删除文件时，CMake 不会自动更新）。</p>
-<p>例如，使用 <code>file(GLOB ...)</code> 可以根据模式匹配查找文件：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB MY_SOURCES <span class="string">&quot;*.cpp&quot;</span>) <span class="comment"># 不推荐用于源文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(MyExecutable <span class="variable">$&#123;MY_SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="global-options"><a href="#global-options" class="headerlink" title="global options"></a><code>global options</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-a         listen on all network interfaces, not just localhost</span><br><span class="line">-d         use USB device (error if multiple devices connected)</span><br><span class="line">-e         use TCP/IP device (error if multiple TCP/IP devices available)</span><br><span class="line">-s SERIAL  use device with given serial (overrides $ANDROID_SERIAL)</span><br><span class="line">-t ID      use device with given transport id</span><br><span class="line">-H         name of adb server host [default=localhost]</span><br><span class="line">-P         port of adb server [default=5037]</span><br><span class="line">-L SOCKET  listen on given socket for adb server [default=tcp:localhost:5037]</span><br></pre></td></tr></table></figure>
 
-<p>在这个例子中，<code>MY_SOURCES</code> 变量会包含当前目录下所有后缀为 <code>.cpp</code> 的源码文件。</p>
-<p>总结来说，CMake 需要你在 <code>CMakeLists.txt</code> 中显式指定源码文件，它不会默认查找源码文件。你可以使用 <code>file(GLOB ...)</code> 或 <code>aux_source_directory</code> 这样的命令来收集源码文件，但最好的实践仍然是显式地列出所有源码文件，尤其是对于那些希望确保构建系统适应性和可维护性的项目来说。</p>
+<h2 id="general-commands"><a href="#general-commands" class="headerlink" title="general commands"></a><code>general commands</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devices [-l]             list connected devices (-l for long output)</span><br><span class="line">help                     show this help message</span><br><span class="line">version                  show version num</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/12/adb%E6%96%87%E6%A1%A3%E5%A4%A7%E5%85%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/gradle%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E8%B8%A9%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
+      <meta itemprop="name" content="barry">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/12/gradle%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E8%B8%A9%E5%9D%91/" class="post-title-link" itemprop="url">gradle参数传递踩坑</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-12 00:28:58" itemprop="dateCreated datePublished" datetime="2023-12-12T00:28:58+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>gradle 参数传递默认为 <code>string</code> 类型</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew -Pflag=false</span><br></pre></td></tr></table></figure>
+<p>参数为字符串类型时，这里判断为始终为真</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误</span></span><br><span class="line"><span class="keyword">if</span> (flag) &#123;</span><br><span class="line">  <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="keyword">if</span> (Boolean.valueOf(flag)) &#123;</span><br><span class="line">   <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>

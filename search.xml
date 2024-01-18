@@ -261,7 +261,7 @@
   </entry>
   <entry>
     <title>add_subdirectory</title>
-    <url>/2023/12/26/add-subdirectory/</url>
+    <url>/2021/12/26/add-subdirectory/</url>
     <content><![CDATA[<p><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
 <p>在 Java 中，”submodule” 这个术语并不是官方的编程概念，而是通常用于描述较大项目中的组织结构，尤其是在使用 Maven 或 Gradle 这样的构建工具时。这些构建工具允许你创建多模块（multi-module）项目，其中每个模块可以有自己的构建生命周期和依赖管理。</p>
 <p>如果将 CMake 中的 <code>add_subdirectory</code> 命令与 Java 多模块项目的概念进行比较，那么可以说它们在概念上是相似的。<code>add_subdirectory</code> 允许你将一个目录（可以认为是一个模块或子项目）添加到主项目的构建过程中。这个目录通常包含它自己的 <code>CMakeLists.txt</code> 文件，定义了如何构建该目录中的代码。</p>
@@ -318,7 +318,7 @@
   </entry>
   <entry>
     <title>cmake源集机制</title>
-    <url>/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/</url>
+    <url>/2021/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/</url>
     <content><![CDATA[<p><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
 <p>在 CMake 中，并没有一个默认机制来自动查找源码文件。CMake 需要你在 <code>CMakeLists.txt</code> 配置文件中显式地指定源码文件。这意味着 CMake 不会去猜测或自动探测你的源码文件所在；你必须明确告诉 CMake 需要编译哪些文件。</p>
 <p>通常，你会在 <code>CMakeLists.txt</code> 文件中使用 <code>add_executable</code> 或者 <code>add_library</code> 命令来定义编译目标，并显式地列出构成该目标的所有源码文件。例如：</p>
@@ -645,7 +645,7 @@
   </entry>
   <entry>
     <title>include_directories和target_include_directories</title>
-    <url>/2023/12/26/include-directories/</url>
+    <url>/2021/12/26/include-directories/</url>
     <content><![CDATA[<p><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
 <p><code>include_directories</code>是CMake中的一个命令，其作用是向项目中添加包含目录（<strong>即头文件搜索路径</strong>）。当编译器编译项目中的源代码文件时，它会在这些指定的目录中查找<code>#include</code>指令引用的头文件。</p>
 <p>使用 <code>include_directories</code> 命令可以使编译器搜索项目内外的附加目录，从而找到所需的头文件。这对于跨目录的项目结构或者使用第三方库非常有用。</p>

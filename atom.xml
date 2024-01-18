@@ -60,83 +60,6 @@
   </entry>
   
   <entry>
-    <title>include_directories和target_include_directories</title>
-    <link href="https://xuechuang.cc/2023/12/26/include-directories/"/>
-    <id>https://xuechuang.cc/2023/12/26/include-directories/</id>
-    <published>2023-12-26T09:52:53.000Z</published>
-    <updated>2024-01-18T03:25:58.965Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="cmake" scheme="https://xuechuang.cc/categories/cmake/"/>
-    
-    
-    <category term="cmake" scheme="https://xuechuang.cc/tags/cmake/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>add_subdirectory</title>
-    <link href="https://xuechuang.cc/2023/12/26/add-subdirectory/"/>
-    <id>https://xuechuang.cc/2023/12/26/add-subdirectory/</id>
-    <published>2023-12-26T09:50:08.000Z</published>
-    <updated>2024-01-18T03:25:58.964Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cmake.org/cmake/help/latest/guide/tutorial/index.html&quot;&gt;cmake&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在 Java 中，”submodule”</summary>
-        
-      
-    
-    
-    
-    <category term="cmake" scheme="https://xuechuang.cc/categories/cmake/"/>
-    
-    
-    <category term="cmake" scheme="https://xuechuang.cc/tags/cmake/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cmake源集机制</title>
-    <link href="https://xuechuang.cc/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/"/>
-    <id>https://xuechuang.cc/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/</id>
-    <published>2023-12-26T09:16:55.000Z</published>
-    <updated>2024-01-18T03:25:58.964Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cmake.org/cmake/help/latest/guide/tutorial/index.html&quot;&gt;cmake&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在 CMake 中，并没有一个默认机制来自动查找源码文件。CMake 需要你在</summary>
-        
-      
-    
-    
-    
-    <category term="cmake" scheme="https://xuechuang.cc/categories/cmake/"/>
-    
-    
-    <category term="cmake" scheme="https://xuechuang.cc/tags/cmake/"/>
-    
-  </entry>
-  
-  <entry>
     <title>yuv转png命令</title>
     <link href="https://xuechuang.cc/2023/12/12/yuv%E8%BD%ACpng%E5%91%BD%E4%BB%A4/"/>
     <id>https://xuechuang.cc/2023/12/12/yuv%E8%BD%ACpng%E5%91%BD%E4%BB%A4/</id>
@@ -514,6 +437,80 @@
     
     
     <category term="shell语法" scheme="https://xuechuang.cc/tags/shell%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何编写shell脚本</title>
+    <link href="https://xuechuang.cc/2023/06/21/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99shell%E8%84%9A%E6%9C%AC/"/>
+    <id>https://xuechuang.cc/2023/06/21/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99shell%E8%84%9A%E6%9C%AC/</id>
+    <published>2023-06-21T10:06:43.000Z</published>
+    <updated>2024-01-18T03:25:58.967Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;如何编写-shell-脚本&quot;&gt;&lt;a href=&quot;#如何编写-shell-脚本&quot; class=&quot;headerlink&quot; title=&quot;如何编写 shell  脚本?&quot;&gt;&lt;/a&gt;如何编写 shell  脚本?&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://itnext.io/upgrading-bash-on-macos-7138bd1066ba&quot;&gt;升级bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;选择编辑器&lt;/li&gt;
+&lt;li&gt;安装 shell check 语法检查工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;安装-shellcheck-工具&quot;&gt;&lt;a href=&quot;#安装-shellcheck-工具&quot; class=&quot;headerlink&quot; title=&quot;安装 shellcheck 工具&quot;&gt;&lt;/a&gt;安装 shellcheck 工具&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install shellcheck&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
+    
+    
+    <category term="shellcheck" scheme="https://xuechuang.cc/tags/shellcheck/"/>
+    
+    <category term="sublime" scheme="https://xuechuang.cc/tags/sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux命令大全</title>
+    <link href="https://xuechuang.cc/2023/06/21/linux-%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
+    <id>https://xuechuang.cc/2023/06/21/linux-%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</id>
+    <published>2023-06-20T16:13:48.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;linux-命令大全&quot;&gt;&lt;a href=&quot;#linux-命令大全&quot; class=&quot;headerlink&quot; title=&quot;linux 命令大全&quot;&gt;&lt;/a&gt;linux 命令大全&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-command-manual.html&quot;&gt;Runoob&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://man.niaoge.com/&quot;&gt;鸟哥Linux命令大全&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://linux.51yip.com/&quot;&gt;Linux命令手册&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.linuxcool.com/&quot;&gt;Linux命令大全(手册)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.linuxcommands.site/&quot;&gt;LinuxCommands.site&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
+    
+    
+    <category term="linux" scheme="https://xuechuang.cc/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二进制基础</title>
+    <link href="https://xuechuang.cc/2023/06/20/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%9F%BA%E7%A1%80/"/>
+    <id>https://xuechuang.cc/2023/06/20/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%9F%BA%E7%A1%80/</id>
+    <published>2023-06-20T15:19:52.000Z</published>
+    <updated>2024-01-18T03:25:58.967Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/tuhmu1.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://xuechuang.cc/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
   </entry>
   
