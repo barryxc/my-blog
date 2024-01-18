@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2024-01-18T03:55:20.318Z</updated>
+  <updated>2024-01-18T05:23:48.208Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -15,19 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test2</title>
-    <link href="https://xuechuang.cc/2024/01/18/test2/"/>
-    <id>https://xuechuang.cc/2024/01/18/test2/</id>
-    <published>2024-01-18T03:55:20.000Z</published>
-    <updated>2024-01-18T03:55:20.318Z</updated>
-    
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>mac 常用技巧</title>
@@ -463,6 +450,70 @@
     
     
     <category term="shell" scheme="https://xuechuang.cc/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shell语法</title>
+    <link href="https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95/"/>
+    <id>https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95/</id>
+    <published>2023-06-22T16:57:32.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;基础语法&quot;&gt;&lt;a href=&quot;#基础语法&quot; class=&quot;headerlink&quot; title=&quot;基础语法&quot;&gt;&lt;/a&gt;基础语法&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;语法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-variable.html&quot;&gt;变量&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-passing-arguments.html&quot;&gt;参数传递&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-array.html&quot;&gt;数组使用&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-basic-operators.html&quot;&gt;运算符&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-echo.html&quot;&gt;echo命令&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-process-control.html&quot;&gt;流程控制&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-func.html&quot;&gt;函数&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-io-redirections.html&quot;&gt;输入输出重定向&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-shell-include-file.html&quot;&gt;文件包含&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&quot;语法练习&quot;&gt;&lt;a href=&quot;#语法练习&quot; class=&quot;headerlink&quot; title=&quot;语法练习&quot;&gt;&lt;/a&gt;语法练习&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/exam/oj?page=1&amp;tab=SHELL%E7%AF%87&amp;topicId=195&quot;&gt;牛客网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;查看可用的shell&quot;&gt;&lt;a href=&quot;#查看可用的shell&quot; class=&quot;headerlink&quot; title=&quot;查看可用的shell&quot;&gt;&lt;/a&gt;查看可用的shell&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/shells&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;查看当前正在使用的shell&quot;&gt;&lt;a href=&quot;#查看当前正在使用的shell&quot; class=&quot;headerlink&quot; title=&quot;查看当前正在使用的shell&quot;&gt;&lt;/a&gt;查看当前正在使用的shell&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;注意SHELL一定要是大写。可以看到，我目前使用的shell是/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $SHELL&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;修改我的-shell-为zsh&quot;&gt;&lt;a href=&quot;#修改我的-shell-为zsh&quot; class=&quot;headerlink&quot; title=&quot;修改我的 shell 为zsh&quot;&gt;&lt;/a&gt;修改我的 shell 为zsh&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;chsh -s /bin/zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;shebang&quot;&gt;&lt;a href=&quot;#shebang&quot; class=&quot;headerlink&quot; title=&quot;shebang&quot;&gt;&lt;/a&gt;shebang&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;!/bin/sh&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;字符串处理&quot;&gt;&lt;a href=&quot;#字符串处理&quot; class=&quot;headerlink&quot; title=&quot;字符串处理&quot;&gt;&lt;/a&gt;字符串处理&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;str=&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;定义字符串 $&amp;#123;str&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;计算字符串长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;字符串的长度为 $&amp;#123;#str&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;截取字符串&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;截取索引从1开始，长度为4的子串 $&amp;#123;str:start:length&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;字符串替换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;把老的字符串替换为新的字符串 $&amp;#123;str//$&amp;#123;oldstr&amp;#125;/$&amp;#123;newstr&amp;#125;&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
+    
+    
+    <category term="shell语法" scheme="https://xuechuang.cc/tags/shell%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   

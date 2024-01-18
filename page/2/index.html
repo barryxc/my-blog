@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,102 +188,6 @@
     </div>
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/" class="post-title-link" itemprop="url">cmake源集机制</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-12-26 17:16:55" itemprop="dateCreated datePublished" datetime="2023-12-26T17:16:55+08:00">2023-12-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cmake/" itemprop="url" rel="index"><span itemprop="name">cmake</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">cmake</a></p>
-<p>在 CMake 中，并没有一个默认机制来自动查找源码文件。CMake 需要你在 <code>CMakeLists.txt</code> 配置文件中显式地指定源码文件。这意味着 CMake 不会去猜测或自动探测你的源码文件所在；你必须明确告诉 CMake 需要编译哪些文件。</p>
-<p>通常，你会在 <code>CMakeLists.txt</code> 文件中使用 <code>add_executable</code> 或者 <code>add_library</code> 命令来定义编译目标，并显式地列出构成该目标的所有源码文件。例如：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(MyExecutable main.cpp foo.cpp bar.cpp)</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MyExecutable</code> 是目标的名字，<code>main.cpp</code>、<code>foo.cpp</code> 和 <code>bar.cpp</code> 是明确指定的源码文件。</p>
-<p>如果你有一组相对固定的源码文件，你可以简单地将它们全部列出。然而，对于较大的项目或者源码文件经常变动的情况，逐一列出所有文件可能会变得繁琐。为了简化这个过程，CMake 提供了一些命令来帮助你查找和指定源码文件，这些命令包括 <code>aux_source_directory</code> 和 <code>file(GLOB ...)</code>。虽然这些命令可以帮助收集源码文件，但它们通常不是最佳实践，因为它们无法跟踪文件系统中的变化（例如，当你添加或删除文件时，CMake 不会自动更新）。</p>
-<p>例如，使用 <code>file(GLOB ...)</code> 可以根据模式匹配查找文件：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB MY_SOURCES <span class="string">&quot;*.cpp&quot;</span>) <span class="comment"># 不推荐用于源文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(MyExecutable <span class="variable">$&#123;MY_SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MY_SOURCES</code> 变量会包含当前目录下所有后缀为 <code>.cpp</code> 的源码文件。</p>
-<p>总结来说，CMake 需要你在 <code>CMakeLists.txt</code> 中显式指定源码文件，它不会默认查找源码文件。你可以使用 <code>file(GLOB ...)</code> 或 <code>aux_source_directory</code> 这样的命令来收集源码文件，但最好的实践仍然是显式地列出所有源码文件，尤其是对于那些希望确保构建系统适应性和可维护性的项目来说。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -595,6 +499,93 @@
 <h4 id="本地proguard-android-txt文件路径"><a href="#本地proguard-android-txt文件路径" class="headerlink" title="本地proguard-android.txt文件路径"></a>本地proguard-android.txt文件路径</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file:///Users/barry/Library/Android/sdk/tools/proguard/proguard-android.txt</span><br></pre></td></tr></table></figure>
 
 <h4 id="掘金文档地址"><a href="#掘金文档地址" class="headerlink" title="掘金文档地址"></a>掘金文档地址</h4><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903474740592647#heading-11">https://juejin.cn/post/6844903474740592647#heading-11</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/clion%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
+      <meta itemprop="name" content="barry">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/12/clion%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" class="post-title-link" itemprop="url">clion交叉编译</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-12 00:22:27" itemprop="dateCreated datePublished" datetime="2023-12-12T00:22:27+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>编译 android 平台产物</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/3756563/1621793280166-b7803ca4-0db1-438e-8523-ee00961efbaa.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-DCMAKE_TOOLCHAIN_FILE=/Users/barry/Library/Android/sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake</span><br><span class="line">-DANDROID_ABI=armeabi-v7a</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>参考文档</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#id22">Cross Compiling for Android</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jirryzhang/article/details/72793363">Cmake交叉编译详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/ndk/guides/cmake#command-line">CMake 工具链文件</a></li>
+</ul>
 
       
     </div>

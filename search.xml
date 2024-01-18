@@ -28,9 +28,10 @@
     <title>AndroidStudio常用快捷键</title>
     <url>/2023/03/31/AndroidStudio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<ul>
-<li>alt+鼠标移动 （所有行）</li>
-<li>alt+shift+ 鼠标移动（指定行）</li>
-<li>control +option +Q 切换预览视图or编辑模式 （利于阅读源码注释文档）</li>
+<li><input disabled="" type="checkbox"> ⌥ +鼠标移动 （选择所有行）</li>
+<li><input disabled="" type="checkbox"> ⌥ +⇧+ 鼠标移动（选择指定行）</li>
+<li><input disabled="" type="checkbox"> ⌘  +⌥ +Q 切换预览视图or编辑模式 （利于阅读源码注释文档）</li>
+<li><input disabled="" type="checkbox"> ⌥ + ⌘ + T  surround with 快捷键</li>
 </ul>
 ]]></content>
       <categories>
@@ -1773,11 +1774,6 @@
       <tags>
         <tag>sudo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>test2</title>
-    <url>/2024/01/18/test2/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>typedef用法</title>
