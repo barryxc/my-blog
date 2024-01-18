@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuechuang.cc","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1.模拟信号的数字化方法PCM1.1 PCM的定义 最基本的概念：模拟信号是指随时间连续变化的物理量，将声音在磁带上记录成磁场强度的变化或在黑胶唱片上记录成沟槽大小的变化就是以模拟方式进行存储。数字信号则是离散的，计算机中的数据都是以数字方式存储的。模拟信号和数字信号可以相互转换，这里我们讨论的就是把模拟信号转换成数字信号。 脉冲编码调制（Pulse Code Modulation, PCM）是一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="音视频基础">
+<meta property="og:url" content="https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="1.模拟信号的数字化方法PCM1.1 PCM的定义 最基本的概念：模拟信号是指随时间连续变化的物理量，将声音在磁带上记录成磁场强度的变化或在黑胶唱片上记录成沟槽大小的变化就是以模拟方式进行存储。数字信号则是离散的，计算机中的数据都是以数字方式存储的。模拟信号和数字信号可以相互转换，这里我们讨论的就是把模拟信号转换成数字信号。 脉冲编码调制（Pulse Code Modulation, PCM）是一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267284-dc222967-4899-435a-bfdb-a461aad3a056.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267210-f22783e8-b37e-4487-984d-ff86df7bade8.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267366-f7128252-0720-49f4-b5b9-63d9c52b10b5.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267362-1ac6850f-60a5-46a2-a4cf-7ee519a2abb5.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267277-ab9fca63-6bd4-4d93-8f80-79543e25e59c.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268078-3c7fe69b-ad31-491c-a2d0-663402d2ee55.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268267-140c5284-3b1c-4880-ad6e-ac790605b252.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268395-871af070-1d8d-4d73-a859-e1ad31ebffe5.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268383-60ca6f59-63b4-4e04-a379-aae69476997a.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772269280-9141bb66-2670-4a11-8fd2-64f047292b96.png">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772269397-c44761ba-c29b-4a38-8840-39aa7b4806db.png">
+<meta property="og:image" content="https://p.ipic.vip/tt2pvn.png">
+<meta property="og:image" content="https://p.ipic.vip/fbr1ws.png">
+<meta property="og:image" content="https://p.ipic.vip/ltypg6.png">
+<meta property="og:image" content="https://p.ipic.vip/txsb2o.png">
+<meta property="article:published_time" content="2023-12-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-18T03:25:58.969Z">
+<meta property="article:author" content="barry">
+<meta property="article:tag" content="android、java、sql、c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267284-dc222967-4899-435a-bfdb-a461aad3a056.png">
+
+
+<link rel="canonical" href="https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/","path":"2023/12/12/音视频基础/","title":"音视频基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>音视频基础 | 博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E6%96%B9%E6%B3%95PCM"><span class="nav-number">1.</span> <span class="nav-text">1.模拟信号的数字化方法PCM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%95%B0%E5%AD%97%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">2 数字音频基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B0%E5%AD%97%E9%9F%B3%E9%A2%91%E6%A6%82%E5%BF%B5%E5%8C%BA%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">3 数字音频概念区分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%9F%B3%E9%A2%91%E8%BF%9B%E9%98%B6"><span class="nav-number">4.</span> <span class="nav-text">4 音频进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%9B%BE%E5%83%8F%E7%9A%84%E6%95%B0%E5%80%BC%E8%A1%A8%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">5.图像的数值表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-RGB%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 RGB表示方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-YUV%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 YUV表示方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-YUV%E5%92%8CRGB%E7%9A%84%E8%BD%AC%E5%8C%96"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 YUV和RGB的转化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%A7%86%E9%A2%91%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">6.视频的编码方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 视频编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E7%BC%96%E7%A0%81%E6%A6%82%E5%BF%B5"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 编码概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-IPB%E5%B8%A7"><span class="nav-number">6.2.1.</span> <span class="nav-text">1. IPB帧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-PTS%E4%B8%8EDTS"><span class="nav-number">6.2.2.</span> <span class="nav-text">2. PTS与DTS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-GOP%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">6.2.3.</span> <span class="nav-text">3.GOP的概念</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="barry"
+      src="https://avatars.githubusercontent.com/u/20833925?v=4">
+  <p class="site-author-name" itemprop="name">barry</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/barryxc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;barryxc" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1253330232@qq.com" title="E-Mail → mailto:1253330232@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
+      <meta itemprop="name" content="barry">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="音视频基础 | 博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          音视频基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-12 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-12T00:00:00+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="1-模拟信号的数字化方法PCM"><a href="#1-模拟信号的数字化方法PCM" class="headerlink" title="1.模拟信号的数字化方法PCM"></a>1.模拟信号的数字化方法PCM</h2><p><strong>1.1 PCM的定义</strong></p>
+<p>最基本的概念：<strong>模拟信号</strong>是指随时间连续变化的物理量，将声音在磁带上记录成磁场强度的变化或在黑胶唱片上记录成沟槽大小的变化就是以模拟方式进行存储。<strong>数字信号</strong>则是离散的，计算机中的数据都是以数字方式存储的。模拟信号和数字信号可以相互转换，这里我们讨论的就是把模拟信号转换成数字信号。</p>
+<p><strong>脉冲编码调制（Pulse Code Modulation, PCM）是一种模拟信号的数字化方法。</strong>它是最常用、最简单的波形编码方式，但是也存在其它方法，比如脉冲密度调制（Pulse Density Modulation, PDM）。</p>
+<span id="more"></span>
+
+<p><strong>1.2 PCM的实现过程</strong></p>
+<p>下图就是脉冲编码调制的完整过程，简单概括为：<strong>采样，量化，编码</strong>。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267284-dc222967-4899-435a-bfdb-a461aad3a056.png" alt="img"></p>
+<p>具体来说就是：</p>
+<p>1，将模拟信号按照同样的时间间距（即采样时间）进行采样。</p>
+<p>2，按某种运算法确定样本值，即量化。</p>
+<p>3，将样本值用二进制表示，即编码。</p>
+<p>由上可见，脉冲编码调制实际上并没有”调制”的过程，而且也并没有脉冲出现，只因为PCM来源于PWM和PPM技术，所以也保留了”脉冲”二字。所以将脉冲编码调制（PCM）理解为”一种模拟信号的数字化方法”是最准确的。</p>
+<h2 id="2-数字音频基础概念"><a href="#2-数字音频基础概念" class="headerlink" title="2 数字音频基础概念"></a>2 数字音频基础概念</h2><p><strong>2.1 采样率 Sample Rate</strong></p>
+<p><strong>采样率</strong>（采样频率）即<strong>每秒内进行采样的次数</strong>。符号是fs，单位是Hz。采样率越高，数字波形的形状就越接近原始模拟波形，声音的还原就越真实。</p>
+<p>如下是同一波形的两种采样率对比，可以看到低采样率的A采样波形严重失真，而高采样率的B则几乎完全重现原始波形：</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267210-f22783e8-b37e-4487-984d-ff86df7bade8.png" alt="img"></p>
+<p>根据奈奎斯特－香农<strong>采样定理</strong>，只有采样频率高于原始模拟信号中最高频率的<strong>两倍</strong>时，才能把数字信号表示的模拟信号准确还原回去。例如，CD 的采样率为每秒 44,100 个采样，因此可重现最高为 22,050 Hz 的频率，此频率刚好超过人类的听力极限 20,000 Hz。实际应用中采样频率一般为信号最高频率的2.56～4倍。</p>
+<p>数字音频领域常用的采样率如下表：</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267366-f7128252-0720-49f4-b5b9-63d9c52b10b5.png" alt="img"></p>
+<p><strong>2.2 采样位数 Bit Depth</strong></p>
+<p><strong>采样位数</strong>（又称<strong>位宽，位深，位深度</strong>），字面意义就是<strong>采样值的二进制编码的位数。</strong>采样位数反应了采样系统对声音的辨析度，位数越高，对声音的记录就越精细，所以也称之为<strong>采样精度，采样深度</strong>。</p>
+<p>采样位数的含义是<strong>用多少个点来描述声音信号的强度</strong>，如1.2节的PCM编码的位数就是3bit，即有2^3 &#x3D; 8个点。如果是8bit，就有2^8 &#x3D; 256个点。</p>
+<p>采样位数直接影响采集信号的信噪比&#x2F;动态范围。较高的采样位数可提供更多可能的振幅值，产生更大的动态范围、更低的噪声基准和更高的保真度。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267362-1ac6850f-60a5-46a2-a4cf-7ee519a2abb5.png" alt="img"></p>
+<p>总结一下，采样率是相对于时间来说的，采样位数是相对信号的幅度来说的，在1.2节中分别对应横坐标和纵坐标。</p>
+<p><strong>2.3 声道 Sound Channel</strong></p>
+<p><strong>声道</strong>是指声音在录制或播放时在不同空间位置采集或回放的相互独立的音频信号，通俗的说<strong>声道数就是录音时的麦克风数量，也是播放时的音响数量。</strong>声道数，也叫<strong>通道数，轨道数，音轨数</strong>。</p>
+<p>常见的声道数有单声道（Mono），双声道（即立体声，Stereo），5.1声道，7.1声道等。这里的 .1声道指的是低音声道。</p>
+<p>如下是一个5.1声道家庭影院示意图，六个扬声器分别是 ：C（Central）中置，FL（Front Left）左前置，FR（Front Right）右前置，SL（Surround Left）左环绕，SR（Surround Right）右环绕和SW（Subwoofer）低音炮。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772267277-ab9fca63-6bd4-4d93-8f80-79543e25e59c.png" alt="img"></p>
+<p><strong>2.4 比特率 Bit Rate</strong></p>
+<p>比特是由bit音译而来，指二进制数中的<strong>位</strong>，它是数字信息的最小度量单位。</p>
+<p>在通信与计算领域，比特率就是<strong>指每秒传送或处理的比特的数量（位数）</strong>，所以比特率又称为”<strong>二进制位速率</strong>“，简称”<strong>位速或位率</strong>“，常用于形容传输速度，带宽。</p>
+<p>在数字多媒体领域，比特率是<strong>每秒播放连续的音频或视频的比特的数量</strong>，是音视频文件的一个属性。此时它相当于术语”<strong>数字带宽消耗量或吞吐量</strong>“，也俗称为”<strong>码率</strong>“。</p>
+<p>比特率的统一含义是”**二进制码数量&#x2F;时间”**，单位是比特每秒，bit per second，缩写为bit&#x2F;s（不是”bits&#x2F;s”），简写为bps或b&#x2F;s。有一些不正式的描述比如”128千比特音频流”或”100兆比特网络”则是省略了”每秒”。</p>
+<p>常用比特率的表述：</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268078-3c7fe69b-ad31-491c-a2d0-663402d2ee55.png" alt="img"></p>
+<h2 id="3-数字音频概念区分"><a href="#3-数字音频概念区分" class="headerlink" title="3 数字音频概念区分"></a>3 数字音频概念区分</h2><p><strong>3.1 PCM与ADC</strong></p>
+<p>PCM（Pulse Code Modulation）是一种模拟信号的数字化方法，ADC（Analog to Digital Converter）芯片是实现这一方法的器件。</p>
+<p><strong>3.2 比特率与下载速度</strong></p>
+<p>网络带宽常用比特率表示，单位bps，比如千比特每秒Kbps &#x3D; Kb&#x2F;s，兆比特每秒Mbps &#x3D; Mb&#x2F;s，这里的b是bit（位）。而日常我们说的下载速度的单位是KB&#x2F;s，MB&#x2F;s（简写为K&#x2F;s，M&#x2F;s），这里的B是Byte（字节），是用来表示文件大小的单位。</p>
+<p>字节中的KB、MB、GB的递进关系是1024，而<strong>比特率中的kb，Mb，Gb的递进关系则是1000</strong>。而且<strong>1byte&#x3D;8bit</strong>，所以说 1MB&#x2F;s ≈ 8Mbps &#x3D; 8Mb&#x2F;s。实际上因为网络损耗，运营商口中的带宽bps（b&#x2F;s）和我们实际理解的下载速度B&#x2F;s的关系一般是十倍左右。</p>
+<p><strong>3.3 音频编码格式和文件格式</strong></p>
+<p>[注：在很多语义下，音频编码&#x3D;音频编码格式，音频文件&#x3D;音频文件格式]</p>
+<p><strong>3.3.1 PCM编码与PCM文件</strong></p>
+<p>如上所述，PCM（脉冲编码调制）是一种模拟信号的数字化方法，PCM编码就是这个方法中的数字音频编码方式。PCM编码是最原始的音频编码，其他编码都是在它基础上再次编码和压缩的。</p>
+<p>PCM文件是以PCM编码方式存储音频的文件，是未经压缩的原始数字音频文件，通常称为PCM裸流&#x2F;音频裸数据&#x2F;raw data。常用文件扩展名是.pcm和.raw，通常它们是不能直接播放的。PCM裸流经过重新编码，封装（见下节）后，比如变为 .wav格式，就可以正常播放了。</p>
+<p><strong>3.3.2 编码格式与文件格式的含义</strong></p>
+<p>常见的音频文件都有两部分格式：一是文件格式，二是编码格式。两者是不同的概念：<strong>文件格式专指存放音频数据的文件的格式，</strong>对应文件的扩展名<strong>；编码格式则是指音频数据的特定格式</strong>，也叫<strong>数据格式，音频编码</strong>。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268267-140c5284-3b1c-4880-ad6e-ac790605b252.png" alt="img"></p>
+<p><strong>3.3.3 常见的编码格式与文件格式</strong></p>
+<p>大部分情况下，一种文件格式对应一种音频编码。但是也有例外，比如.caf的文件格式就能包含MP3、LPCM和其他格式编码的音频数据，AAC编码格式对应的文件的扩展名就有.aac、 .mp4 和 .m4a。</p>
+<p>文件格式与音频编码的名称有时相同，比如平时我们经常说的mp3既是文件格式，又是编码格式；也有时不同。而且有时它们的称呼也不规范，比如为了方便人们一般称Monkey’s Audio音频编码格式为ape编码。</p>
+<p>常用的音频编码格式与文件格式的对应关系总结如下：</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268395-871af070-1d8d-4d73-a859-e1ad31ebffe5.png" alt="img"></p>
+<p><strong>3.3.4 有损编码与无损编码</strong></p>
+<p>理论上说，任何数字音频都是无法完全还原模拟信号的。不过PCM编码是模拟信号转换为数字信号时的原始编码，它代表着数字音频的最佳保真水平，所以PCM编码就约定俗成为”无损编码”。</p>
+<p>上节中的音频编码是对PCM编码进行了二次编码，是为了减小原始PCM编码的体积，所以也叫它们为<strong>压缩编码</strong>，对应的文件叫<strong>压缩格式</strong>。</p>
+<p>二次编码的音频编码也分为两类：有损编码和无损编码，也称为有损压缩和无损压缩。<strong>无损就是指相对PCM编码来说音质相同，有损则是损失了一些音频质量。</strong></p>
+<h2 id="4-音频进阶"><a href="#4-音频进阶" class="headerlink" title="4 音频进阶"></a>4 音频进阶</h2><p><strong>4.1 比特率的计算</strong></p>
+<p>假设有一段采样频率44.1KHz，采样位数16bit，立体声的PCM音频。也就是说，在产生这段音频时间里，1s内系统采样的次数是44100次，每次采样的数据位数是16位，同时进行2通道采样。这就意味着，系统每秒采集的比特数为44100次×16位×2通道 &#x3D; 1411200个。根据比特率的定义，这段音频的比特率就是1411.2kbit&#x2F;s。</p>
+<p><strong>音频的比特率&#x3D;采样率×位深度×通道数</strong></p>
+<p>此外，如果还知道这段PCM音频文件的时长，还可以计算文件的大小：假设文件时长为1分钟，那么文件大小为1411.2kbit&#x2F;s × 60s &#x3D; 84672kbit，而1byte&#x3D;8bit，所以文件大小为10,584,000B &#x3D; 10,355.9KB &#x3D; 10.1MB。</p>
+<p>【注意】一个 kb（kilobit，千比特） 表示 1,000比特，而不是普遍被认为的1,024比特。</p>
+<p><strong>音频文件大小(B)&#x3D;比特率(b&#x2F;s)×时长(s)÷8</strong></p>
+<p>对于mp3，wav等其他格式的音频文件，文件里还包括了帧头等其他附加信息，所以文件体积还会稍大一些。</p>
+<p><strong>4.2 查看音频文件的参数</strong></p>
+<p>对于音视频文件，查看其比特率最简单的方式是右键-属性-详细，就可以直接看到了。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772268383-60ca6f59-63b4-4e04-a379-aae69476997a.png" alt="img"></p>
+<p>查看更详细的采样率，声道数，位深。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772269280-9141bb66-2670-4a11-8fd2-64f047292b96.png" alt="img"></p>
+<p>对于音乐播放软件，左侧网易云的标准、较高和极高音质分别对应MP3音频格式中的128、192和320kbit&#x2F;s三个比特率，无损音质则是对应700~1000kbit&#x2F;s的flac文件格式。</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2022/png/3756563/1661772269397-c44761ba-c29b-4a38-8840-39aa7b4806db.png" alt="img"></p>
+<p>对于右侧的QQ音乐，是用品质描述+文件大小来表示，标准品质为128kbit&#x2F;s的MP3，HQ (High Quality) 高音质则是高于128kbit&#x2F;s的MP3，SQ (Super Quality) 无损品质则采用APE和FLAC无损文件格式。</p>
+<h2 id="5-图像的数值表示"><a href="#5-图像的数值表示" class="headerlink" title="5.图像的数值表示"></a>5.图像的数值表示</h2><h3 id="5-1-RGB表示方式"><a href="#5-1-RGB表示方式" class="headerlink" title="5.1 RGB表示方式"></a>5.1 RGB表示方式</h3><p>任何一个图像都可以由RGB组成，那么一个像素点的RGB该如何表示呢？音频里面的每一个采样 （sample）均使用16个比特来表示，那么像素里面的子像素又该如何表 示呢？常用的表示方式有以下几种。</p>
+<ul>
+<li><p>浮点表示：取值范围为0.0～1.0，比如，在OpenGL ES中对每一个 子像素点的表示使用的就是这种表达方式。</p>
+</li>
+<li><p>整数表示：取值范围为0～255或者00～FF，8个比特表示一个子像 素，32个比特表示一个像素，这就是类似于某些平台上表示图像格式的 RGBA_8888数据格式。比如，Android平台上RGB_565的表示方法为16 比特模式表示一个像素，R用5个比特来表示，G用6个比特来表示，B用 5个比特来表示。 对于一幅图像，一般使用整数表示方法来进行描述，比如计算一张 1280×720的RGBA_8888图像的大小，可采用如下方式： 1280 * 720 * 4 &#x3D; 3.516MB 这也是位图（bitmap）在内存中所占用的大小，所以每一张图像的 裸数据都是很大的。</p>
+</li>
+</ul>
+<blockquote>
+<p>对于图像的裸数据来讲，直接在网络上进行传输也 是不太可能的，所以就有了图像的压缩格式，比如JPEG压缩：JPEG是 静态图像压缩标准，由ISO制定。JPEG图像压缩算法在提供良好的压缩 性能的同时，具有较好的重建质量。这种算法被广泛应用于图像处理领 域，当然其也是一种有损压缩。在很多网站如淘宝上使用的都是这种压 缩之后的图片，但是，这种压缩不能直接应用于视频压缩，因为对于视 频来讲，还有一个时域上的因素需要考虑，也就是说，不仅仅要考虑帧 内编码，还要考虑帧间编码。视频采用的是更成熟的算法。</p>
+</blockquote>
+<h3 id="5-2-YUV表示方式"><a href="#5-2-YUV表示方式" class="headerlink" title="5.2 YUV表示方式"></a>5.2 YUV表示方式</h3><p>对于视频帧的裸数据表示，其实更多的是YUV数据格式的表示， YUV主要应用于优化彩色视频信号的传输，使其向后兼容老式黑白电 视。与RGB视频信号传输相比，它最大的优点在于只需要占用极少的频宽（RGB要求三个独立的视频信号同时传输）。其中“Y”表示明亮度 （Luminance或Luma），也称灰阶值；而“U”和“V”表示的则是色度 （Chrominance或Chroma），它们的作用是描述影像的色彩及饱和度， 用于指定像素的颜色。“亮度”是透过RGB输入信号来建立的，方法是将 RGB信号的特定部分叠加到一起。“色度”则定义了颜色的两个方面—— 色调与饱和度，分别用Cr和Cb来表示。</p>
+<p><img src="https://p.ipic.vip/tt2pvn.png" alt="image-20231215141817741"></p>
+<p>相较于RGB，我们可以计算一帧为1280×720的视频帧，用 YUV420P的格式来表示，其数据量的大小如下： 1280 * 720 * 1 + 1280 * 720 * 0.5 &#x3D; 1.318MB 如果fps（1秒的视频帧数目）是24，按照一般电影的长度90分钟来 计算，那么这部电影用YUV420P的数据格式来表示的话，其数据量的 大小就是： 1.318MB * 24fps * 90min * 60s &#x3D; 166.8GB</p>
+<h3 id="5-3-YUV和RGB的转化"><a href="#5-3-YUV和RGB的转化" class="headerlink" title="5.3 YUV和RGB的转化"></a>5.3 YUV和RGB的转化</h3><p>前面已经讲过，凡是渲染到屏幕上的东西（文字、图片或者其 他），都要转换为RGB的表示形式，那么YUV的表示形式和RGB的表 示形式之间是如何进行转换的呢？对于标清电视601标准，它从YUV转 换到RGB的公式与高清电视709的标准是不同的，通过如下的计算（如 图1-9和图1-10）即可得知。</p>
+<p><img src="https://p.ipic.vip/fbr1ws.png" alt="image-20231215141853358"></p>
+<p><img src="https://p.ipic.vip/ltypg6.png" alt="image-20231215141902343"></p>
+<h2 id="6-视频的编码方式"><a href="#6-视频的编码方式" class="headerlink" title="6.视频的编码方式"></a>6.视频的编码方式</h2><h3 id="6-1-视频编码"><a href="#6-1-视频编码" class="headerlink" title="6.1 视频编码"></a>6.1 视频编码</h3><p>音频压缩主要是去除冗余信息，从而实现数据量的压缩。那么对于视频压缩，又该从哪几方面来对数据进行压缩呢？其实与前面提到的音频编码类似，视频压缩也是通过去除冗余信息来进行压缩的。相较于音频数据，视频数据有极强的相关性，也就是说有大量的冗余信息，包括空间上的冗余信息和时间上的冗余信息。 使用帧间编码技术可以去除时间上的冗余信息，具体包括以下几个部分。</p>
+<ul>
+<li>运动补偿：运动补偿是通过先前的局部图像来预测、补偿当前的局部图像，它是减少帧序列冗余信息的有效方法。</li>
+<li>运动表示：不同区域的图像需要使用不同的运动矢量来描述运动 信息。 </li>
+<li>运动估计：运动估计是从视频序列中抽取运动信息的一整套技 术。</li>
+</ul>
+<p>使用帧内编码技术可以去除空间上的冗余信息。 对于视频，ISO同样也制定了标准：Motion JPEG即MPEG，MPEG算法是适用于动态视频的压缩算法，它除了对单幅图像进行编码外，还利用图像序列中的相关原则 去除冗余，这样可以大大提高视频的压缩比。截至目前，MPEG的版本 一直在不断更新中，主要包括这样几个版本：Mpeg1（用于VCD）、 Mpeg2（用于DVD）、Mpeg4 AVC（现在流媒体使用最多的就是它 了）。 相比较于ISO制定的MPEG的视频压缩标准，ITU-T制定的H.261、 H.262、H.263、H.264一系列视频编码标准是一套单独的体系。其中， H.264集中了以往标准的所有优点，并吸取了以往标准的经验，采用的是简洁设计，这使得它比Mpeg4更容易推广。现在使用最多的就是 H.264标准，H.264创造了多参考帧、多块类型、整数变换、帧内预测等新的压缩技术，使用了更精细的分像素运动矢量（1&#x2F;4、1&#x2F;8）和新一代 的环路滤波器，这使得压缩性能得到大大提高，系统也变得更加完善。</p>
+<h3 id="6-2-编码概念"><a href="#6-2-编码概念" class="headerlink" title="6.2 编码概念"></a>6.2 编码概念</h3><h4 id="1-IPB帧"><a href="#1-IPB帧" class="headerlink" title="1. IPB帧"></a>1. IPB帧</h4><p>视频压缩中，每帧都代表着一幅静止的图像。而在进行实际压缩 时，会采取各种算法以减少数据的容量，其中IPB帧就是最常见的一 种。 </p>
+<ul>
+<li>I帧：帧内编码帧（intra picture），I帧通常是每个GOP（MPEG所 使用的一种视频压缩技术）的第一个帧，经过适度地压缩，作为随机访 问的参考点，可以当成静态图像。I帧可以看作一个图像经过压缩后的 产物，I帧压缩可以得到6：1的压缩比而不会产生任何可觉察的模糊现 象。I帧压缩可去掉视频的空间冗余信息，下面即将介绍的P帧和B帧是 为了去掉时间冗余信息。</li>
+<li>P帧：前向预测编码帧（predictive-frame），通过将图像序列中前 面已编码帧的时间冗余信息充分去除来压缩传输数据量的编码图像，也 称为预测帧。 ·B帧：双向预测内插编码帧（bi-directional interpolated prediction frame），既考虑源图像序列前面的已编码帧，又顾及源图像序列后面 的已编码帧之间的时间冗余信息，来压缩传输数据量的编码图像，也称 为双向预测帧。 基于上面的定义，我们可以从解码的角度来理解IPB帧。 ·I帧自身可以通过视频解压算法解压成一张单独的完整视频画面， 所以I帧去掉的是视频帧在空间维度上的冗余信息。 ·P帧需要参考其前面的一个I帧或者P帧来解码成一张完整的视频画 面。</li>
+<li>B帧则需要参考其前一个I帧或者P帧及其后面的一个P帧来生成一 张完整的视频画面，所以P帧与B帧去掉的是视频帧在时间维度上的冗 余信息。</li>
+</ul>
+<h4 id="2-PTS与DTS"><a href="#2-PTS与DTS" class="headerlink" title="2. PTS与DTS"></a>2. PTS与DTS</h4><p> DTS主要用于视频的解码，英文全称是Decoding Time Stamp，PTS 主要用于在解码阶段进行视频的同步和输出，全称是Presentation Time Stamp。在没有B帧的情况下，DTS和PTS的输出顺序是一样的。因为B 帧打乱了解码和显示的顺序，所以一旦存在B帧，PTS与DTS势必就会不同。</p>
+<h4 id="3-GOP的概念"><a href="#3-GOP的概念" class="headerlink" title="3.GOP的概念"></a>3.GOP的概念</h4><p>两个I帧之间形成的一组图片，就是GOP（Group Of Picture）的概念。通常在为编码器设置参数的时候，必须要设置gop_size的值，其代 表的是两个I帧之间的帧数目。</p>
+<p><img src="https://p.ipic.vip/txsb2o.png" alt="image-20231215141549378"></p>
+<blockquote>
+<p>注：频率单位赫兹（Hertz，简称 Hz）是为了纪念德国物理学家海因里希·鲁道夫·赫兹（Heinrich Rudolf Hertz）。海因里希·赫兹于1888年通过实验证明了电磁波的存在，成功地验证了麦克斯韦方程组的预言。这一发现对无线电通信和现代电磁技术的发展起到了重要的推动作用。</p>
+<p>在他的名字命名之前，频率的常用单位是“每秒周期数”（cycles per second）。1948年，国际度量衡大会正式采用“赫兹”作为频率的单位，以表彰他在电磁学领域的贡献。1赫兹代表每秒完成一个周期的振动或波动。</p>
+<p>因此，我们现在使用的频率单位“赫兹”是对海因里希·赫兹在科学上贡献的一种纪念。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechat.png" alt="barry 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>barry
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/" title="音视频基础">https://xuechuang.cc/2023/12/12/音视频基础/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/12/11/Android%E5%86%B7%E5%90%AF%E5%8A%A8%E8%87%AA%E5%8A%A8%E8%B0%83%E8%AF%95/" rel="prev" title="Android冷启动自动调试">
+                  <i class="fa fa-chevron-left"></i> Android冷启动自动调试
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/12/12/%E5%87%86%E5%8F%AC%E7%8E%87%E5%AE%9A%E4%B9%89/" rel="next" title="准召率定义">
+                  准召率定义 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">barry</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/barryxc" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

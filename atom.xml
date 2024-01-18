@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>博客</title>
+  <icon>https://xuechuang.cc/icon.png</icon>
+  
+  <link href="https://xuechuang.cc/atom.xml" rel="self"/>
+  
+  <link href="https://xuechuang.cc/"/>
+  <updated>2024-01-18T03:55:20.318Z</updated>
+  <id>https://xuechuang.cc/</id>
+  
+  <author>
+    <name>barry</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test2</title>
+    <link href="https://xuechuang.cc/2024/01/18/test2/"/>
+    <id>https://xuechuang.cc/2024/01/18/test2/</id>
+    <published>2024-01-18T03:55:20.000Z</published>
+    <updated>2024-01-18T03:55:20.318Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mac 常用技巧</title>
+    <link href="https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <id>https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
+    <published>2024-01-18T03:54:21.000Z</published>
+    <updated>2024-01-18T05:23:48.208Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;在当前的目录中打开 terminal&lt;/li&gt;
+&lt;li&gt;添加当前目录到 PATH</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo</title>
+    <link href="https://xuechuang.cc/2024/01/18/hexo/"/>
+    <id>https://xuechuang.cc/2024/01/18/hexo/</id>
+    <published>2024-01-18T03:25:58.965Z</published>
+    <updated>2024-01-18T03:25:58.965Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://xuechuang.cc/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://xuechuang.cc/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>include_directories和target_include_directories</title>
+    <link href="https://xuechuang.cc/2023/12/26/include-directories/"/>
+    <id>https://xuechuang.cc/2023/12/26/include-directories/</id>
+    <published>2023-12-26T09:52:53.000Z</published>
+    <updated>2024-01-18T03:25:58.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="cmake" scheme="https://xuechuang.cc/categories/cmake/"/>
+    
+    
+    <category term="cmake" scheme="https://xuechuang.cc/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>add_subdirectory</title>
+    <link href="https://xuechuang.cc/2023/12/26/add-subdirectory/"/>
+    <id>https://xuechuang.cc/2023/12/26/add-subdirectory/</id>
+    <published>2023-12-26T09:50:08.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cmake.org/cmake/help/latest/guide/tutorial/index.html&quot;&gt;cmake&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 Java 中，”submodule”</summary>
+        
+      
+    
+    
+    
+    <category term="cmake" scheme="https://xuechuang.cc/categories/cmake/"/>
+    
+    
+    <category term="cmake" scheme="https://xuechuang.cc/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cmake源集机制</title>
+    <link href="https://xuechuang.cc/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/"/>
+    <id>https://xuechuang.cc/2023/12/26/cmake%E6%BA%90%E9%9B%86%E6%9C%BA%E5%88%B6/</id>
+    <published>2023-12-26T09:16:55.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cmake.org/cmake/help/latest/guide/tutorial/index.html&quot;&gt;cmake&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 CMake 中，并没有一个默认机制来自动查找源码文件。CMake 需要你在</summary>
+        
+      
+    
+    
+    
+    <category term="cmake" scheme="https://xuechuang.cc/categories/cmake/"/>
+    
+    
+    <category term="cmake" scheme="https://xuechuang.cc/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>yuv转png命令</title>
+    <link href="https://xuechuang.cc/2023/12/12/yuv%E8%BD%ACpng%E5%91%BD%E4%BB%A4/"/>
+    <id>https://xuechuang.cc/2023/12/12/yuv%E8%BD%ACpng%E5%91%BD%E4%BB%A4/</id>
+    <published>2023-12-11T16:47:43.000Z</published>
+    <updated>2024-01-18T03:25:58.967Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>adb文档大全</title>
+    <link href="https://xuechuang.cc/2023/12/12/adb%E6%96%87%E6%A1%A3%E5%A4%A7%E5%85%A8/"/>
+    <id>https://xuechuang.cc/2023/12/12/adb%E6%96%87%E6%A1%A3%E5%A4%A7%E5%85%A8/</id>
+    <published>2023-12-11T16:40:19.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Android Debug Bridge version 1.0.41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Version 30.0.5-6877874&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;global-options&quot;&gt;&lt;a href=&quot;#global-options&quot; class=&quot;headerlink&quot; title=&quot;global options&quot;&gt;&lt;/a&gt;&lt;code&gt;global options&lt;/code&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a         listen on all network interfaces, not just localhost&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d         use USB device (error if multiple devices connected)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-e         use TCP/IP device (error if multiple TCP/IP devices available)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s SERIAL  use device with given serial (overrides $ANDROID_SERIAL)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t ID      use device with given transport id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H         name of adb server host [default=localhost]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-P         port of adb server [default=5037]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L SOCKET  listen on given socket for adb server [default=tcp:localhost:5037]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;general-commands&quot;&gt;&lt;a href=&quot;#general-commands&quot; class=&quot;headerlink&quot; title=&quot;general commands&quot;&gt;&lt;/a&gt;&lt;code&gt;general commands&lt;/code&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;devices [-l]             list connected devices (-l for long output)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;help                     show this help message&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;version                  show version num&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gradle参数传递踩坑</title>
+    <link href="https://xuechuang.cc/2023/12/12/gradle%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E8%B8%A9%E5%9D%91/"/>
+    <id>https://xuechuang.cc/2023/12/12/gradle%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E8%B8%A9%E5%9D%91/</id>
+    <published>2023-12-11T16:28:58.000Z</published>
+    <updated>2024-01-18T03:25:58.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;gradle 参数传递默认为 &lt;code&gt;string&lt;/code&gt; 类型&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>proguard指南</title>
+    <link href="https://xuechuang.cc/2023/12/12/proguard%E6%8C%87%E5%8D%97/"/>
+    <id>https://xuechuang.cc/2023/12/12/proguard%E6%8C%87%E5%8D%97/</id>
+    <published>2023-12-11T16:26:16.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;本地帮助手册&quot;&gt;&lt;a href=&quot;#本地帮助手册&quot; class=&quot;headerlink&quot; title=&quot;本地帮助手册&quot;&gt;&lt;/a&gt;本地帮助手册&lt;/h4&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>clion交叉编译</title>
+    <link href="https://xuechuang.cc/2023/12/12/clion%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
+    <id>https://xuechuang.cc/2023/12/12/clion%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</id>
+    <published>2023-12-11T16:22:27.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;编译 android 平台产物&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sql执行顺序</title>
+    <link href="https://xuechuang.cc/2023/12/12/sql%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/"/>
+    <id>https://xuechuang.cc/2023/12/12/sql%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/</id>
+    <published>2023-12-11T16:18:13.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;MySQL中的SQL语句执行顺序，通常指的是查询（SELECT）语句的各个组成部分的逻辑执行顺序。虽然我们按照一定的语法顺序编写SQL语句，但是数据库系统在查询优化和执行过程中，并不是按照我们编写的顺序执行的。&lt;/p&gt;
+&lt;p&gt;以下是一个典型的SELECT语句的编写顺序：&lt;/</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>准召率定义</title>
+    <link href="https://xuechuang.cc/2023/12/12/%E5%87%86%E5%8F%AC%E7%8E%87%E5%AE%9A%E4%B9%89/"/>
+    <id>https://xuechuang.cc/2023/12/12/%E5%87%86%E5%8F%AC%E7%8E%87%E5%AE%9A%E4%B9%89/</id>
+    <published>2023-12-11T16:11:30.000Z</published>
+    <updated>2024-01-18T03:25:58.967Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一个模型的好坏，要看它的准召率是否高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义：准是准确率，召是召回率。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;假设我们在验证一个反垃圾模型，1000个样本里面有500个垃圾，我们抓出了1个样本，且这个样本为垃圾。&lt;/p&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>音视频基础</title>
+    <link href="https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/"/>
+    <id>https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/</id>
+    <published>2023-12-11T16:00:00.000Z</published>
+    <updated>2024-01-18T03:25:58.969Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-模拟信号的数字化方法PCM&quot;&gt;&lt;a href=&quot;#1-模拟信号的数字化方法PCM&quot; class=&quot;headerlink&quot; title=&quot;1.模拟信号的数字化方法PCM&quot;&gt;&lt;/a&gt;1.模拟信号的数字化方法PCM&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.1 PCM的定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;最基本的概念：&lt;strong&gt;模拟信号&lt;/strong&gt;是指随时间连续变化的物理量，将声音在磁带上记录成磁场强度的变化或在黑胶唱片上记录成沟槽大小的变化就是以模拟方式进行存储。&lt;strong&gt;数字信号&lt;/strong&gt;则是离散的，计算机中的数据都是以数字方式存储的。模拟信号和数字信号可以相互转换，这里我们讨论的就是把模拟信号转换成数字信号。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;脉冲编码调制（Pulse Code Modulation, PCM）是一种模拟信号的数字化方法。&lt;/strong&gt;它是最常用、最简单的波形编码方式，但是也存在其它方法，比如脉冲密度调制（Pulse Density Modulation, PDM）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="音视频" scheme="https://xuechuang.cc/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android冷启动自动调试</title>
+    <link href="https://xuechuang.cc/2023/12/11/Android%E5%86%B7%E5%90%AF%E5%8A%A8%E8%87%AA%E5%8A%A8%E8%B0%83%E8%AF%95/"/>
+    <id>https://xuechuang.cc/2023/12/11/Android%E5%86%B7%E5%90%AF%E5%8A%A8%E8%87%AA%E5%8A%A8%E8%B0%83%E8%AF%95/</id>
+    <published>2023-12-11T14:58:15.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;1-选择调试程序&quot;&gt;&lt;a href=&quot;#1-选择调试程序&quot; class=&quot;headerlink&quot; title=&quot;1. 选择调试程序&quot;&gt;&lt;/a&gt;1. 选择调试程序&lt;/h3&gt;&lt;h3 id=&quot;2-打开等待调试程序开关&quot;&gt;&lt;a href=&quot;#2-打开等待调试程序开关&quot; class=&quot;headerlink&quot; title=&quot;2. 打开等待调试程序开关&quot;&gt;&lt;/a&gt;2. 打开等待调试程序开关&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/27w0zb.png&quot; alt=&quot;image-20231221151223098&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="调试" scheme="https://xuechuang.cc/categories/%E8%B0%83%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ssh详解</title>
+    <link href="https://xuechuang.cc/2023/09/06/ssh%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://xuechuang.cc/2023/09/06/ssh%E8%AF%A6%E8%A7%A3/</id>
+    <published>2023-09-06T06:55:39.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;https-wangdoc-com-ssh&quot;&gt;&lt;a href=&quot;#https-wangdoc-com-ssh&quot; class=&quot;headerlink&quot; title=&quot;https://wangdoc.com/ssh/&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode-快捷键</title>
+    <link href="https://xuechuang.cc/2023/09/06/VSCode-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://xuechuang.cc/2023/09/06/VSCode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <published>2023-09-05T16:49:38.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;打开终端&lt;/td&gt;
+&lt;td&gt;⇧ ESC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打开命令面板&lt;/td&gt;
+&lt;td&gt;⌘ ⇧</summary>
+        
+      
+    
+    
+    
+    <category term="快捷键" scheme="https://xuechuang.cc/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+    
+    <category term="vscode" scheme="https://xuechuang.cc/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android生成签名证书</title>
+    <link href="https://xuechuang.cc/2023/08/30/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    <id>https://xuechuang.cc/2023/08/30/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</id>
+    <published>2023-08-30T03:33:16.000Z</published>
+    <updated>2024-01-18T03:25:58.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;生成秘钥证书&quot;&gt;&lt;a href=&quot;#生成秘钥证书&quot; class=&quot;headerlink&quot; title=&quot;生成秘钥证书&quot;&gt;&lt;/a&gt;生成秘钥证书&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>shell 中各种括号的作用</title>
+    <link href="https://xuechuang.cc/2023/06/24/shell-%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7/"/>
+    <id>https://xuechuang.cc/2023/06/24/shell-%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7/</id>
+    <published>2023-06-24T05:05:13.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt; 菜鸟教程 &lt;a href=&quot;https://www.runoob.com/w3cnote/linux-shell-brackets-features.html&quot;&gt;https://www.runoob.com/w3cnote/linux-shell-brackets-features.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;和-96-96&quot;&gt;&lt;a href=&quot;#和-96-96&quot; class=&quot;headerlink&quot; title=&quot;$()和  &amp;#96;&amp;#96;&quot;&gt;&lt;/a&gt;&lt;code&gt;$()和 &lt;/code&gt; &amp;#96;&amp;#96;&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;在 bash shell 中，$( ) 与` ` (反引号) 都是用来做命令替换用(commandsubstitution)的。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;例如   version=$(uname -r)和version=`uname -r`都可以是version得到内核的版本号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;各自的优缺点：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1. `  ` 基本上可用在全部的 unix shell 中使用，若写成 shell script ，其移植性比较高。但反单引号容易打错或看错。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. $()并不是所有shell都支持。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;${ }&quot;&gt;&lt;/a&gt;&lt;code&gt;$&amp;#123; &amp;#125;&lt;/code&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$&amp;#123; &amp;#125;用于变量替换。一般情况下，$var 与$&amp;#123;var&amp;#125; 并没有啥不一样。但是用 $&amp;#123; &amp;#125; 会比较精确的界定变量名称的范围。比如&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ A=B&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ echo $AB&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;原本是打算先将 $A 的结果替换出来，然后再补一个 B 字母于其后，&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;但在命令行上，真正的结果却是只会提换变量名称为 AB 的值出来…&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;若使用 $&amp;#123; &amp;#125; 就没问题了：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ echo $&amp;#123;A&amp;#125;B&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;BB&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$&amp;#123; &amp;#125;的功能远不止于此.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shell语法练习</title>
+    <link href="https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/"/>
+    <id>https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</id>
+    <published>2023-06-23T11:51:02.000Z</published>
+    <updated>2024-01-18T03:25:58.966Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/exam/oj?page=1&amp;tab=SHELL%E7%AF%87&amp;topicId=195&quot;&gt;牛客网练习&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;查看可用的shell&quot;&gt;&lt;a href=&quot;#查看可用的shell&quot; class=&quot;headerlink&quot; title=&quot;查看可用的shell&quot;&gt;&lt;/a&gt;查看可用的shell&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/shells&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;shebang&quot;&gt;&lt;a href=&quot;#shebang&quot; class=&quot;headerlink&quot; title=&quot;shebang&quot;&gt;&lt;/a&gt;shebang&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;!/bin/sh&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;字符串&quot;&gt;&lt;a href=&quot;#字符串&quot; class=&quot;headerlink&quot; title=&quot;字符串&quot;&gt;&lt;/a&gt;字符串&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;str=&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;定义字符串 $&amp;#123;str&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;字符串的长度为 $&amp;#123;#str&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;截取索引从1开始，长度为4的子串 $&amp;#123;str:1:4&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a=(234 2 3 4 5 6)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;定义数组 a=($&amp;#123;a[*]&amp;#125;)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;数组的长度为 $&amp;#123;#a[*]&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;数组第一个元素的长度$&amp;#123;#a[0]&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
+    
+    
+    <category term="shell" scheme="https://xuechuang.cc/tags/shell/"/>
+    
+  </entry>
+  
+</feed>
