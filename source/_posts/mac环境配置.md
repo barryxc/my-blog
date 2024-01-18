@@ -6,13 +6,14 @@ category: mac
 ---
 
 1. 在当前的目录中打开 `iterm2  `命令行工具
- ![jj8u2t](https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/jj8u2t.png?token=AE66NBI2G47EA5V2JZYPC2DFVE5RA)
+		![jj8u2t](https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/jj8u2t.png?token=AE66NBPRTYMLFYIODDFRLI3FVE6SK)
+
 
 2. 添加当前目录到 PATH 中，可以避免每次执行文件时添加 `./`前缀
 
-```shell
-export PATH=${PATH}:.
-```
+	```shell
+	export PATH=${PATH}:.
+	```
 
 3. 安装 `iterm2` 工具，安装 `oh-my-zsh` 插件
 
@@ -34,7 +35,7 @@ export PATH=${PATH}:.
 
    - [x] https://nodejs.org/en
 
-6. 通过 `typora` 图像设置安  `PicList` 图床软件, 设置 `github` 图床
+6. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
 
    - [x] https://piclist.cn/
 
