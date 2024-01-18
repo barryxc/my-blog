@@ -197,7 +197,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
@@ -215,7 +215,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/01/18/mac%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">mac 常用技巧</a>
+          <a href="/2024/01/18/mac%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">mac 常用配置</a>
         </h2>
 
         <div class="post-meta-container">
@@ -227,7 +227,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-01-18 11:54:21 / 修改时间：13:23:48" itemprop="dateCreated datePublished" datetime="2024-01-18T11:54:21+08:00">2024-01-18</time>
+      <time title="创建时间：2024-01-18 11:54:21 / 修改时间：21:16:54" itemprop="dateCreated datePublished" datetime="2024-01-18T11:54:21+08:00">2024-01-18</time>
     </span>
 
   
@@ -241,9 +241,28 @@
     
     <div class="post-body" itemprop="articleBody">
           <ol>
-<li>在当前的目录中打开 terminal</li>
-<li>添加当前目录到 PATH 中</li>
-<li></li>
+<li><p>在当前的目录中打开 <code>iterm2  </code>命令行工具</p>
+<p>![image-20240118140115273](&#x2F;Users&#x2F;bytedance&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240118140115273.png)</p>
+</li>
+<li><p>添加当前目录到 PATH 中，可以避免每次执行文件时添加 <code>./</code>前缀</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 <code>iterm2</code> 工具，安装 <code>oh-my-zsh</code> 插件</p>
+<p><code>iterm2:</code> <a target="_blank" rel="noopener" href="https://iterm2.com/">https://iterm2.com/</a></p>
+<p><code>oh-my-zsh:</code> <a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
+</li>
+<li><p>安装 <code>git-cz</code> 插件，<a target="_blank" rel="noopener" href="https://github.com/commitizen/cz-cli">链接</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g commitizen</span><br><span class="line">npm install -g cz-conventional-changelog</span><br><span class="line">echo &#x27;&#123; &quot;path&quot;: &quot;cz-conventional-changelog&quot; &#125;&#x27; &gt; ~/.czrc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://github.com/commitizen/cz-cli">https://github.com/commitizen/cz-cli</a></li>
+</ul>
+</li>
+<li><p>安装 <code>node</code> 环境 </p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a></li>
+</ul>
+</li>
 </ol>
 
       
