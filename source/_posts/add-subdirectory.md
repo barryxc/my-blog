@@ -1,6 +1,6 @@
 ---
 title: add_subdirectory
-date: 2023-12-26 17:50:08
+date: 2021-12-26 17:50:08
 tags: cmake
 category: cmake
 ---
