@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -155,12 +155,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -197,7 +197,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
@@ -215,7 +215,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/01/18/mac%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">mac 常用配置</a>
+          <a href="/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">mac环境配置</a>
         </h2>
 
         <div class="post-meta-container">
@@ -227,7 +227,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-01-18 11:54:21 / 修改时间：21:16:54" itemprop="dateCreated datePublished" datetime="2024-01-18T11:54:21+08:00">2024-01-18</time>
+      <time title="创建时间：2024-01-18 11:54:21 / 修改时间：22:53:36" itemprop="dateCreated datePublished" datetime="2024-01-18T11:54:21+08:00">2024-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a>
+        </span>
     </span>
 
   
@@ -241,12 +250,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <ol>
-<li><p>在当前的目录中打开 <code>iterm2  </code>命令行工具</p>
-<p>![image-20240118140115273](&#x2F;Users&#x2F;bytedance&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240118140115273.png)</p>
+<li><p>在当前的目录中打开 <code>iterm2  </code>命令行工具<br> <img src="https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/jj8u2t.png?token=AE66NBI2G47EA5V2JZYPC2DFVE5RA" alt="jj8u2t"></p>
 </li>
 <li><p>添加当前目录到 PATH 中，可以避免每次执行文件时添加 <code>./</code>前缀</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
 <li><p>安装 <code>iterm2</code> 工具，安装 <code>oh-my-zsh</code> 插件</p>
 <p><code>iterm2:</code> <a target="_blank" rel="noopener" href="https://iterm2.com/">https://iterm2.com/</a></p>
 <p><code>oh-my-zsh:</code> <a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
@@ -263,6 +274,13 @@
 <li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a></li>
 </ul>
 </li>
+<li><p>通过 <code>typora</code> 图像设置安  <code>PicList</code> 图床软件, 设置 <code>github</code> 图床</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://piclist.cn/">https://piclist.cn/</a></li>
+</ul>
+</li>
+<li><p>解决 <code>git</code> 中文路径显示 <code>unicode</code> 代码问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       

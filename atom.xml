@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2024-01-18T13:16:54.483Z</updated>
+  <updated>2024-01-18T14:53:36.980Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>mac 常用配置</title>
-    <link href="https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
-    <id>https://xuechuang.cc/2024/01/18/mac%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</id>
+    <title>mac环境配置</title>
+    <link href="https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2024-01-18T03:54:21.000Z</published>
-    <updated>2024-01-18T13:16:54.483Z</updated>
+    <updated>2024-01-18T14:53:36.980Z</updated>
     
     
       
@@ -29,13 +29,16 @@
         
         
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在当前的目录中打开 &lt;code&gt;iterm2  &lt;/code&gt;命令行工具&lt;/p&gt;
-&lt;p&gt;![image-20240118140115273](&amp;#x2F;Users&amp;#x2F;bytedance&amp;#x2F;Library&amp;#x2F;Application</summary>
+&lt;li&gt;&lt;p&gt;在当前的目录中打开 &lt;code&gt;iterm2  &lt;/code&gt;命令行工具&lt;br&gt; &lt;img</summary>
         
       
     
     
     
+    <category term="mac" scheme="https://xuechuang.cc/categories/mac/"/>
+    
+    
+    <category term="mac" scheme="https://xuechuang.cc/tags/mac/"/>
     
   </entry>
   
