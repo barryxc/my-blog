@@ -5,8 +5,9 @@ tags: mac
 category: mac
 ---
 
-1. 在当前的目录中打开 `iterm2  `命令行工具
-		![jj8u2t](https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/jj8u2t.png?token=AE66NBPRTYMLFYIODDFRLI3FVE6SK)
+1. 在当前的目录中打开 `iterm2  `命令行工具 : [链接](https://support.apple.com/zh-cn/guide/terminal/trmlb20c7888/mac)	
+
+   ![image-20240119113733401](https://raw.githubusercontent.com/barryxc/pictures-lib/main/PicList/image-20240119113733401.png?token=AE66NBJWAS7IXC5OJB2YSYDFVHXMA)
 
 
 2. 添加当前目录到 PATH 中，可以避免每次执行文件时添加 `./`前缀
