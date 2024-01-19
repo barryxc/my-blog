@@ -17,30 +17,64 @@ category: mac
 
 3. 安装 `iterm2` 工具，安装 `oh-my-zsh` 插件
 
-   `iterm2:` https://iterm2.com/
+   * `iterm2:` https://iterm2.com/
 
-   `oh-my-zsh:` https://ohmyz.sh/
+   * `oh-my-zsh:` https://ohmyz.sh/
 
-4. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
 
-   ```
-   npm install -g commitizen
-   npm install -g cz-conventional-changelog
-   echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
-   ```
+4. 安装 `hombrew` 包管理器
 
-   - [x] https://github.com/commitizen/cz-cli
+    * https://brew.sh/
 
-5. 安装 `node` 环境 
+5. 安装 `git` 命令行工具
 
-   - [x] https://nodejs.org/en
+    * `$ brew install git`
 
-6. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
+6. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
 
-   - [x] https://piclist.cn/
+    ```shell
+    npm install -g commitizen
+    npm install -g cz-conventional-changelog
+    echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+    ```
 
-7. 解决 `git` 中文路径显示 `unicode` 代码问题
+    * https://github.com/commitizen/cz-cli
 
-   ```shell
-   git config --global core.quotepath false
-   ```
+7. 安装 `node` 环境 ,`--global` 全局安装
+
+    * https://nodejs.org/en
+
+8. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
+   *  https://piclist.cn/
+
+9. 解决 `git` 中文路径显示 `unicode` 代码问题
+
+    ```shell
+    git config --global core.quotepath false
+    ```
+
+10. 安装 `hexo` 工具
+    * `Hexo`https://hexo.io/zh-cn/
+
+11. 安装 `alfred` 工具，创建 `yd`有道翻译工作流
+
+    * `Alfred`:https://www.alfredapp.com/
+
+    * `yd` `workflow`:https://github.com/wensonsmith/YoudaoTranslator
+
+12. 安装常用 `ide` 集成开发环境
+
+    1. `android studio` 
+
+    2. `vscode` 
+
+    3. `idea`
+
+    4. `typora`
+
+    5. `sublime text`
+       * 打开命令面板，安装插件  `Tools`->`Command Palette`->`Package Control:Install Package `
+         * `HTML-CSS-JS Prettify`
+    6. `charles`
+
+13. 配置 `ssh` 环境、`github ssh` 环境
