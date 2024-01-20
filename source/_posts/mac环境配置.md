@@ -15,21 +15,21 @@ category: mac
 
    - `oh-my-zsh:` https://ohmyz.sh/
 
-1. 添加当前目录到 PATH 中，可以避免每次执行文件时添加 `./ `前缀
+3. 添加当前目录到 PATH 中，可以避免每次执行文件时添加 `./ `前缀
 
-    ```
-    export PATH=${PATH}:.
-    ```
+   ```shell
+   export PATH=${PATH}:.
+   ```
 
 4. 安装 `git` 命令行工具
 
-   ```
-   `$ brew install git`
+   ```shell
+   brew install git
    ```
 
 5. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
 
-   ```
+   ```shell
    npm install -g commitizen
    npm install -g cz-conventional-changelog
    echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
@@ -53,7 +53,7 @@ category: mac
    git config --global core.quotepath false
    ```
 
-10. 安装 `hexo` 工
+10. 安装 `hexo` 工具
     - `Hexo`https://hexo.io/zh-cn/
 
 11. 安装 `alfred` 工具，创建 `yd`有道翻译工作流
@@ -61,12 +61,22 @@ category: mac
     - `yd` `workflow`:https://github.com/wensonsmith/YoudaoTranslator
 
 12. 安装常用 `ide` 集成开发环境
+
     1. `android studio` 
+
     2. `vscode` 
+
     3. `idea`
+
     4. `typora`
+
     5. `sublime text`
+
+       ```
        - 打开命令面板，安装插件  `Tools`->`Command Palette`->`Package Control:Install Package `
        - `HTML-CSS-JS Prettify`
+       ```
+
     6. `charles`
+
 13. 配置 `ssh` 环境、`github ssh` 环境
