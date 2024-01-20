@@ -3118,13 +3118,13 @@
 </ul>
 </li>
 <li><p>添加当前目录到 PATH 中，可以避免每次执行文件时添加 <code>./ </code>前缀</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:.</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装 <code>git</code> 命令行工具</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">`$ brew install git`</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装 <code>git-cz</code> 插件，<a href="https://github.com/commitizen/cz-cli">链接</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g commitizen</span><br><span class="line">npm install -g cz-conventional-changelog</span><br><span class="line">echo &#x27;&#123; &quot;path&quot;: &quot;cz-conventional-changelog&quot; &#125;&#x27; &gt; ~/.czrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g commitizen</span><br><span class="line">npm install -g cz-conventional-changelog</span><br><span class="line">echo &#x27;&#123; &quot;path&quot;: &quot;cz-conventional-changelog&quot; &#125;&#x27; &gt; ~/.czrc</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><a href="https://github.com/commitizen/cz-cli">https://github.com/commitizen/cz-cli</a></li>
@@ -3148,7 +3148,7 @@
 <li><p>解决 <code>git</code> 中文路径显示 <code>unicode</code> 代码问题</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>安装 <code>hexo</code> 工</p>
+<li><p>安装 <code>hexo</code> 工具</p>
 <ul>
 <li><code>Hexo</code><a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></li>
 </ul>
@@ -3161,16 +3161,19 @@
 </li>
 <li><p>安装常用 <code>ide</code> 集成开发环境</p>
 <ol>
-<li><code>android studio</code> </li>
-<li><code>vscode</code> </li>
-<li><code>idea</code></li>
-<li><code>typora</code></li>
-<li><code>sublime text</code><ul>
-<li>打开命令面板，安装插件  <code>Tools</code>-&gt;<code>Command Palette</code>-&gt;<code>Package Control:Install Package </code></li>
-<li><code>HTML-CSS-JS Prettify</code></li>
-</ul>
+<li><p><code>android studio</code> </p>
 </li>
-<li><code>charles</code></li>
+<li><p><code>vscode</code> </p>
+</li>
+<li><p><code>idea</code></p>
+</li>
+<li><p><code>typora</code></p>
+</li>
+<li><p><code>sublime text</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 打开命令面板，安装插件  `Tools`-&gt;`Command Palette`-&gt;`Package Control:Install Package `</span><br><span class="line">- `HTML-CSS-JS Prettify`</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>charles</code></p>
+</li>
 </ol>
 </li>
 <li><p>配置 <code>ssh</code> 环境、<code>github ssh</code> 环境</p>
