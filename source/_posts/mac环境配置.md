@@ -63,20 +63,14 @@ category: mac
 12. 安装常用 `ide` 集成开发环境
 
     1. `android studio` 
-
     2. `vscode` 
-
     3. `idea`
-
-    4. `typora`
-
-    5. `sublime text`
-
-       ```
-       - 打开命令面板，安装插件  `Tools`->`Command Palette`->`Package Control:Install Package `
-       - `HTML-CSS-JS Prettify`
-       ```
-
-    6. `charles`
-
+    4. `Clion`
+    5. `typora`
+    6. `sublime text`
+       1. 打开命令面板，安装 `HTML-CSS-JS Prettify` 插件。步骤： `Tools`->`Command Palette`->`Package Control:Install Package ` 
+       2. 安装 `shell check` 插件,步骤同上
+    7. `charles`
+    8. `Sourcetree`
+    
 13. 配置 `ssh` 环境、`github ssh` 环境
