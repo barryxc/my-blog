@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2024-01-19T03:40:08.247Z</updated>
+  <updated>2024-01-20T05:40:03.383Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2024-01-18T03:54:21.000Z</published>
-    <updated>2024-01-19T03:40:08.247Z</updated>
+    <updated>2024-01-20T05:40:03.383Z</updated>
     
     
       
@@ -29,7 +29,12 @@
         
         
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在当前的目录中打开 &lt;code&gt;iterm2  &lt;/code&gt;命令行工具 : &lt;a</summary>
+&lt;li&gt;&lt;p&gt;安装 &lt;code&gt;hombrew&lt;/code&gt; 包管理器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://brew.sh/&quot;&gt;https://brew.sh/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装</summary>
         
       
     
