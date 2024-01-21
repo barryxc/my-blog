@@ -1,5 +1,5 @@
 ---
-title: mac环境配置
+title: mac安装环境
 date: 2024-01-18 11:54:21
 tags: mac
 category: mac
@@ -37,6 +37,8 @@ category: mac
 
    * https://github.com/commitizen/cz-cli
 
+   <!--more-->
+
 6. 在当前的目录中打开 `iterm2  `命令行工具 : [链接](https://support.apple.com/zh-cn/guide/terminal/trmlb20c7888/mac)	
    - 从访达打开新的“终端”窗口或标签页
 
@@ -72,5 +74,24 @@ category: mac
        2. 安装 `shell check` 插件,步骤同上
     7. `charles`
     8. `Sourcetree`
-    
+
 13. 配置 `ssh` 环境、`github ssh` 环境
+
+14. 配置 `.zshrc` 环境变量以及`PATH`
+
+    ```shell
+    export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+    export ANDROID_AVD_HOME=/Users/$USER/.android/avd
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/21.1.6352462
+    
+    export PATH=${PATH}:${ANDROID_HOME}/platform-tools/
+    export PATH=${PATH}:${ANDROID_HOME}/tools/
+    export PATH=${PATH}:${ANDROID_HOME}/tools/bin/
+    export PATH=${PATH}:${ANDROID_NDK_HOME}/
+    export PATH=${PATH}:${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/
+    export PATH=${PATH}:${ANDROID_HOME}/build-tools/34.0.0/
+    export PATH=${PATH}:.
+    ```
+
+    
