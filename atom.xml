@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2024-01-20T06:06:06.743Z</updated>
+  <updated>2024-01-21T12:21:18.982Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -17,26 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>mac环境配置</title>
-    <link href="https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>https://xuechuang.cc/2024/01/18/mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <title>mac安装环境</title>
+    <link href="https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/"/>
+    <id>https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</id>
     <published>2024-01-18T03:54:21.000Z</published>
-    <updated>2024-01-20T06:06:06.743Z</updated>
+    <updated>2024-01-21T12:21:18.982Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;安装 &lt;code&gt;hombrew&lt;/code&gt; 包管理器&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://brew.sh/&quot;&gt;https://brew.sh/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装</summary>
-        
-      
+&lt;li&gt;&lt;p&gt;安装 &lt;code&gt;iterm2&lt;/code&gt; 工具，安装 &lt;code&gt;oh-my-zsh&lt;/code&gt; 插件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;iterm2:&lt;/code&gt; &lt;a href=&quot;https://iterm2.com/&quot;&gt;https://iterm2.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;oh-my-zsh:&lt;/code&gt; &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;https://ohmyz.sh/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;添加当前目录到 PATH 中，可以避免每次执行文件时添加 &lt;code&gt;./ &lt;/code&gt;前缀&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;PATH&amp;#125;:.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 &lt;code&gt;git&lt;/code&gt; 命令行工具&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 &lt;code&gt;git-cz&lt;/code&gt; 插件，&lt;a href=&quot;https://github.com/commitizen/cz-cli&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g commitizen&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -g cz-conventional-changelog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;#x27;&amp;#123; &amp;quot;path&amp;quot;: &amp;quot;cz-conventional-changelog&amp;quot; &amp;#125;&amp;#x27; &amp;gt; ~/.czrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/commitizen/cz-cli&quot;&gt;https://github.com/commitizen/cz-cli&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
