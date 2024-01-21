@@ -18,24 +18,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"xuechuang.cc","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="https://xuechuang.cc/page/7/index.html">
+    <meta name="description" content="readelfreadelf 是一个用于显示 ELF（Executable and Linkable Format）文件信息的命令行工具，它是 GNU Binutils 包的一部分。ELF 文件格式是在 Unix 系统上广泛使用的标准二进制格式，用于可执行文件、目标代码、共享库和核心转储（core dumps）。 以下是 readelf 的一些核心用法： 查看文件头信息（File Header）1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NDK常用工具">
+<meta property="og:url" content="https://xuechuang.cc/2023/03/31/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="readelfreadelf 是一个用于显示 ELF（Executable and Linkable Format）文件信息的命令行工具，它是 GNU Binutils 包的一部分。ELF 文件格式是在 Unix 系统上广泛使用的标准二进制格式，用于可执行文件、目标代码、共享库和核心转储（core dumps）。 以下是 readelf 的一些核心用法： 查看文件头信息（File Header）1">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-31T06:24:31.000Z">
+<meta property="article:modified_time" content="2024-01-21T15:47:06.495Z">
 <meta property="article:author" content="barry">
-<meta property="article:tag" content="android、java、sql、c++">
+<meta property="article:tag" content="symbols">
+<meta property="article:tag" content="ndk">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://xuechuang.cc/page/7/">
+<link rel="canonical" href="https://xuechuang.cc/2023/03/31/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/7/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuechuang.cc/2023/03/31/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/","path":"2023/03/31/NDK常用工具/","title":"NDK常用工具"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>博客</title>
+<title>NDK常用工具 | 博客</title>
   
 
 
@@ -69,7 +74,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">博客</h1>
+      <p class="site-title">博客</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -122,7 +127,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -135,6 +140,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#readelf"><span class="nav-number">1.</span> <span class="nav-text">readelf</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%A1%E6%81%AF%EF%BC%88File-Header%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">查看文件头信息（File Header）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E5%A4%B4%E8%A1%A8%EF%BC%88Program-Headers%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">查看程序头表（Program Headers）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%AE%B5%E5%A4%B4%E8%A1%A8%EF%BC%88Section-Headers%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">查看段头表（Section Headers）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%AC%A6%E5%8F%B7%E8%A1%A8%EF%BC%88Symbol-Table%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">查看符号表（Symbol Table）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8A%A8%E6%80%81%E6%AE%B5%E4%BF%A1%E6%81%AF%EF%BC%88Dynamic-Section%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">查看动态段信息（Dynamic Section）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%AE%9A%E4%BD%8D%E4%BF%A1%E6%81%AF%EF%BC%88Relocations%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">查看重定位信息（Relocations）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF"><span class="nav-number">1.7.</span> <span class="nav-text">查看所有信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF%EF%BC%88Version-Info%EF%BC%89"><span class="nav-number">1.8.</span> <span class="nav-text">查看版本信息（Version Info）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%B3%A8%E9%87%8A%E6%AE%B5%EF%BC%88Note-Sections%EF%BC%89"><span class="nav-number">1.9.</span> <span class="nav-text">查看注释段（Note Sections）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NM"><span class="nav-number">2.</span> <span class="nav-text">NM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%AC%A6%E5%8F%B7"><span class="nav-number">2.1.</span> <span class="nav-text">列出所有符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E6%98%BE%E7%A4%BA%E6%9C%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="nav-number">2.2.</span> <span class="nav-text">只显示未定义的符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E5%9C%B0%E5%9D%80%E6%8E%92%E5%BA%8F"><span class="nav-number">2.3.</span> <span class="nav-text">按照地址排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%AC%A6%E5%8F%B7%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.4.</span> <span class="nav-text">显示符号大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%EF%BC%88Demangle%EF%BC%89C-%E7%AC%A6%E5%8F%B7%E5%90%8D%E7%A7%B0"><span class="nav-number">2.5.</span> <span class="nav-text">解码（Demangle）C++ 符号名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">2.6.</span> <span class="nav-text">显示行号信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.</span> <span class="nav-text">显示符号类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#objdump"><span class="nav-number">3.</span> <span class="nav-text">objdump</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">反汇编代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E5%A4%B4%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">显示所有头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%89%B9%E5%AE%9A%E8%8A%82%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">3.3.</span> <span class="nav-text">显示特定节的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%AC%A6%E5%8F%B7%E8%A1%A8"><span class="nav-number">3.4.</span> <span class="nav-text">显示符号表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E9%87%8D%E5%AE%9A%E4%BD%8D%E4%BF%A1%E6%81%AF"><span class="nav-number">3.5.</span> <span class="nav-text">显示重定位信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%8A%A8%E6%80%81%E7%AC%A6%E5%8F%B7%E8%A1%A8"><span class="nav-number">3.6.</span> <span class="nav-text">显示动态符号表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E7%9A%84%E8%8A%82%E5%92%8C%E6%AE%B5%E4%BF%A1%E6%81%AF"><span class="nav-number">3.7.</span> <span class="nav-text">显示文件的节和段信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E5%92%8C%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">3.8.</span> <span class="nav-text">显示汇编代码和源代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E6%B1%87%E7%BC%96%E7%89%B9%E5%AE%9A%E5%87%BD%E6%95%B0"><span class="nav-number">3.9.</span> <span class="nav-text">反汇编特定函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ndk-stack"><span class="nav-number">4.</span> <span class="nav-text">ndk-stack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%94%A8%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">核心用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E6%97%B6%E8%A7%A3%E6%9E%90"><span class="nav-number">4.2.</span> <span class="nav-text">实时解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">4.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addr2line"><span class="nav-number">5.</span> <span class="nav-text">addr2line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%94%A8%E6%B3%95-1"><span class="nav-number">5.1.</span> <span class="nav-text">核心用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E5%A4%9A%E4%B8%AA%E5%9C%B0%E5%9D%80"><span class="nav-number">5.2.</span> <span class="nav-text">解析多个地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%87%BD%E6%95%B0%E5%90%8D"><span class="nav-number">5.3.</span> <span class="nav-text">显示函数名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%EF%BC%88Demangle%EF%BC%89C-%E7%AC%A6%E5%8F%B7%E5%90%8D%E7%A7%B0-1"><span class="nav-number">5.4.</span> <span class="nav-text">解码（Demangle）C++ 符号名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-1"><span class="nav-number">5.5.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -187,130 +193,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/03/31/%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/31/%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">常用反编译工具</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-31 14:27:26" itemprop="dateCreated datePublished" datetime="2023-03-31T14:27:26+08:00">2023-03-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>jadx</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jadx-gui</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>jdgui</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdgui</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>proguard</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proguardgui.sh</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>addr2line</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set(CMAKE_BUILD_TYPE Debug)</span><br><span class="line">addr2line -e libxxx.so 0x#####(地址)</span><br><span class="line">addr2line_20 -e libxxx.so 0x#####(地址)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>ndk-stack</p>
-<blockquote>
-<p>Usage: ndk-stack -sym PATH [-dump PATH]<br>Symbolizes the stack trace from an Android native crash.</p>
-<p>  -sym PATH   sets the root directory for symbols<br>  -dump PATH  sets the file containing the crash dump (default stdin)</p>
-<p>See <a target="_blank" rel="noopener" href="https://developer.android.com/ndk/guides/ndk-stack.html">https://developer.android.com/ndk/guides/ndk-stack.html</a>.</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">adb logcat | ndk-stack -sym $&#123;so文件所在文件夹&#125; &gt; ~/Desktop/crash.log</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/03/31/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -324,13 +217,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
+      <meta itemprop="name" content="NDK常用工具 | 博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/31/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">NDK常用工具</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          NDK常用工具
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -368,8 +261,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="readelf"><a href="#readelf" class="headerlink" title="readelf"></a>readelf</h2><p><code>readelf</code> 是一个用于显示 ELF（Executable and Linkable Format）文件信息的命令行工具，它是 GNU Binutils 包的一部分。ELF 文件格式是在 Unix 系统上广泛使用的标准二进制格式，用于可执行文件、目标代码、共享库和核心转储（core dumps）。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="readelf"><a href="#readelf" class="headerlink" title="readelf"></a>readelf</h2><p><code>readelf</code> 是一个用于显示 ELF（Executable and Linkable Format）文件信息的命令行工具，它是 GNU Binutils 包的一部分。ELF 文件格式是在 Unix 系统上广泛使用的标准二进制格式，用于可执行文件、目标代码、共享库和核心转储（core dumps）。</p>
 <p>以下是 <code>readelf</code> 的一些核心用法：</p>
 <h3 id="查看文件头信息（File-Header）"><a href="#查看文件头信息（File-Header）" class="headerlink" title="查看文件头信息（File Header）"></a>查看文件头信息（File Header）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -h &lt;ELF file&gt;</span><br></pre></td></tr></table></figure>
 
@@ -507,7 +399,6 @@
 </ul>
 <p><code>addr2line</code> 是一个非常有用的工具，它可以帮助开发者快速从程序的地址信息定位到源代码的具体位置，从而加速调试和问题解决的过程。</p>
 
-      
     </div>
 
     
@@ -515,376 +406,56 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechat.png" alt="barry 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
 </div>
 
+          
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/03/31/AndroidStudio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/31/AndroidStudio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">AndroidStudio常用快捷键</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-31 14:21:59" itemprop="dateCreated datePublished" datetime="2023-03-31T14:21:59+08:00">2023-03-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 13:54:46" itemprop="dateModified" datetime="2024-01-18T13:54:46+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/" itemprop="url" rel="index"><span itemprop="name">快捷键</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li><input disabled="" type="checkbox"> ⌥ +鼠标移动 （选择所有行）</li>
-<li><input disabled="" type="checkbox"> ⌥ +⇧+ 鼠标移动（选择指定行）</li>
-<li><input disabled="" type="checkbox"> ⌘  +⌥ +Q 切换预览视图or编辑模式 （利于阅读源码注释文档）</li>
-<li><input disabled="" type="checkbox"> ⌥ + ⌘ + T  surround with 快捷键</li>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>barry
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuechuang.cc/2023/03/31/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="NDK常用工具">https://xuechuang.cc/2023/03/31/NDK常用工具/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/symbols/" rel="tag"># symbols</a>
+              <a href="/tags/ndk/" rel="tag"># ndk</a>
+          </div>
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/03/31/xcode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/31/xcode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">xcode常用快捷键</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-31 14:13:15" itemprop="dateCreated datePublished" datetime="2023-03-31T14:13:15+08:00">2023-03-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/" itemprop="url" rel="index"><span itemprop="name">快捷键</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>快速搜索文件：command⌘+shift⇧+o (open)</li>
-<li>快速定位文件：command⌘+shift⇧+j  （navigate）</li>
-<li>打开控制台：command⌘+t</li>
-<li>后退：control⌃+command⌘+←</li>
-<li>前进：control⌃+command⌘+→</li>
-<li>快速删除当前行：option⌥+d</li>
-<li>参数提示：option⌥+esc</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2022/04/27/typora-%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/27/typora-%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">typora-快捷键</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-27 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-27T00:00:00+08:00">2022-04-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/" itemprop="url" rel="index"><span itemprop="name">快捷键</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <table>
-<thead>
-<tr>
-<th>功能</th>
-<th>源代码</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>标题</td>
-<td><code># 文字</code></td>
-<td><code>⌘ 数字</code></td>
-</tr>
-<tr>
-<td><strong>加粗</strong></td>
-<td><code>**文字**</code></td>
-<td><code>⌘B</code></td>
-</tr>
-<tr>
-<td><em>斜体</em></td>
-<td><code>*文字*</code></td>
-<td><code>⌘I</code></td>
-</tr>
-<tr>
-<td><u>下划线</u></td>
-<td><code>&lt;u&gt;文字&lt;/u&gt;</code></td>
-<td><code>⌘U</code></td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.baidu.com/">超链接</a></td>
-<td><code>[文本](url)</code></td>
-<td><code>⌘K</code></td>
-</tr>
-<tr>
-<td>有序列表</td>
-<td><code>1.   </code></td>
-<td><code>⌥⌘O</code></td>
-</tr>
-<tr>
-<td>无序列表</td>
-<td><code>* </code></td>
-<td><code>⌥⌘U</code></td>
-</tr>
-<tr>
-<td>代码块</td>
-<td><code> ```  代码块 ``` </code></td>
-<td><code>⌥⌘C</code></td>
-</tr>
-<tr>
-<td><code>代码行</code></td>
-<td><code>``</code></td>
-<td><code> ⌃</code> &#96;</td>
-</tr>
-<tr>
-<td>引用</td>
-<td>&gt;</td>
-<td><code>⌥⌘Q</code></td>
-</tr>
-<tr>
-<td>公式块</td>
-<td><code>$$ 公式 $$</code></td>
-<td><code>⌥⌘B</code></td>
-</tr>
-<tr>
-<td>插入图片</td>
-<td><code> ![](图片地址)</code></td>
-<td><code>⌃⌘I</code></td>
-</tr>
-<tr>
-<td>注释</td>
-<td><code>&lt;!--注释内容--&gt;</code></td>
-<td><code>⌃-</code></td>
-</tr>
-<tr>
-<td>列表缩进-增加缩进</td>
-<td></td>
-<td><code>⌘【</code></td>
-</tr>
-<tr>
-<td>列表缩进-减少缩进</td>
-<td></td>
-<td><code>⌘】</code></td>
-</tr>
-<tr>
-<td>表格</td>
-<td></td>
-<td><code>⌥⌘T</code></td>
-</tr>
-<tr>
-<td>切换源码模式</td>
-<td></td>
-<td><code>⌘L</code></td>
-</tr>
-</tbody></table>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/27/typora-%E5%BF%AB%E6%8D%B7%E9%94%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/31/AndroidStudio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="AndroidStudio常用快捷键">
+                  <i class="fa fa-chevron-left"></i> AndroidStudio常用快捷键
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/31/%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7/" rel="next" title="常用反编译工具">
+                  常用反编译工具 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -892,9 +463,7 @@
 
 
 
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/8/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+
 
 </div>
   </main>
