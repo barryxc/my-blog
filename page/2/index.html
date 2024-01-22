@@ -197,6 +197,85 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/gradle%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E8%B8%A9%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
+      <meta itemprop="name" content="barry">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/12/gradle%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E8%B8%A9%E5%9D%91/" class="post-title-link" itemprop="url">gradle参数传递踩坑</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-12 00:28:58" itemprop="dateCreated datePublished" datetime="2023-12-12T00:28:58+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>gradle 参数传递默认为 <code>string</code> 类型</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew -Pflag=false</span><br></pre></td></tr></table></figure>
+<p>参数为字符串类型时，这里判断为始终为真</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误</span></span><br><span class="line"><span class="keyword">if</span> (flag) &#123;</span><br><span class="line">  <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="keyword">if</span> (Boolean.valueOf(flag)) &#123;</span><br><span class="line">   <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/proguard%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,100 +595,6 @@
 <p>再举一个例子，假设世界上只有一个脏话：“傻逼”，然后模型的规则是，只要包含“傻逼”两个字，就是垃圾评论，那么你的准确率和召回率都是100%，这个模型一个字好。</p>
 <p>结果，键盘侠发现了，他把“傻逼”改成了“煞笔”，完蛋了，你的模型找不出这个垃圾，但是此时，你的模型的准确率，还是100%，可你的召回率不堪入目，因为漏掉了“煞笔”这类垃圾。</p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">音视频基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-12-12 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-12T00:00:00+08:00">2023-12-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-18 11:25:58" itemprop="dateModified" datetime="2024-01-18T11:25:58+08:00">2024-01-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="1-模拟信号的数字化方法PCM"><a href="#1-模拟信号的数字化方法PCM" class="headerlink" title="1.模拟信号的数字化方法PCM"></a>1.模拟信号的数字化方法PCM</h2><p><strong>1.1 PCM的定义</strong></p>
-<p>最基本的概念：<strong>模拟信号</strong>是指随时间连续变化的物理量，将声音在磁带上记录成磁场强度的变化或在黑胶唱片上记录成沟槽大小的变化就是以模拟方式进行存储。<strong>数字信号</strong>则是离散的，计算机中的数据都是以数字方式存储的。模拟信号和数字信号可以相互转换，这里我们讨论的就是把模拟信号转换成数字信号。</p>
-<p><strong>脉冲编码调制（Pulse Code Modulation, PCM）是一种模拟信号的数字化方法。</strong>它是最常用、最简单的波形编码方式，但是也存在其它方法，比如脉冲密度调制（Pulse Density Modulation, PDM）。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/12/12/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%9F%BA%E7%A1%80/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

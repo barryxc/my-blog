@@ -53,6 +53,33 @@
   </entry>
   
   <entry>
+    <title>NDK常用工具</title>
+    <link href="https://xuechuang.cc/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    <id>https://xuechuang.cc/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</id>
+    <published>2024-01-21T06:24:31.000Z</published>
+    <updated>2024-01-22T06:15:56.117Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;readelf&quot;&gt;&lt;a href=&quot;#readelf&quot; class=&quot;headerlink&quot; title=&quot;readelf&quot;&gt;&lt;/a&gt;readelf&lt;/h2&gt;&lt;p&gt;&lt;code&gt;readelf&lt;/code&gt; 是一个用于显示 ELF（Executable and</summary>
+        
+      
+    
+    
+    
+    <category term="android" scheme="https://xuechuang.cc/categories/android/"/>
+    
+    
+    <category term="symbols" scheme="https://xuechuang.cc/tags/symbols/"/>
+    
+    <category term="ndk" scheme="https://xuechuang.cc/tags/ndk/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mac安装环境</title>
     <link href="https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/"/>
     <id>https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</id>
@@ -525,29 +552,6 @@
     
     
     <category term="linux" scheme="https://xuechuang.cc/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二进制基础</title>
-    <link href="https://xuechuang.cc/2023/06/20/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%9F%BA%E7%A1%80/"/>
-    <id>https://xuechuang.cc/2023/06/20/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%9F%BA%E7%A1%80/</id>
-    <published>2023-06-20T15:19:52.000Z</published>
-    <updated>2024-01-18T03:25:58.967Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/tuhmu1.png&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="笔记" scheme="https://xuechuang.cc/categories/%E7%AC%94%E8%AE%B0/"/>
-    
     
   </entry>
   
