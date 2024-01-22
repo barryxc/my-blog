@@ -57,16 +57,23 @@
     <link href="https://xuechuang.cc/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     <id>https://xuechuang.cc/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</id>
     <published>2024-01-21T06:24:31.000Z</published>
-    <updated>2024-01-22T06:15:56.117Z</updated>
+    <updated>2024-01-22T06:20:01.923Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;readelf&quot;&gt;&lt;a href=&quot;#readelf&quot; class=&quot;headerlink&quot; title=&quot;readelf&quot;&gt;&lt;/a&gt;readelf&lt;/h2&gt;&lt;p&gt;&lt;code&gt;readelf&lt;/code&gt; 是一个用于显示 ELF（Executable and</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;readelf&quot;&gt;&lt;a href=&quot;#readelf&quot; class=&quot;headerlink&quot; title=&quot;readelf&quot;&gt;&lt;/a&gt;readelf&lt;/h2&gt;&lt;p&gt;&lt;code&gt;readelf&lt;/code&gt; 是一个用于显示 ELF（Executable and Linkable Format）文件信息的命令行工具，它是 GNU Binutils 包的一部分。ELF 文件格式是在 Unix 系统上广泛使用的标准二进制格式，用于可执行文件、目标代码、共享库和核心转储（core dumps）。&lt;/p&gt;
+&lt;p&gt;以下是 &lt;code&gt;readelf&lt;/code&gt; 的一些核心用法：&lt;/p&gt;
+&lt;h3 id=&quot;查看文件头信息（File-Header）&quot;&gt;&lt;a href=&quot;#查看文件头信息（File-Header）&quot; class=&quot;headerlink&quot; title=&quot;查看文件头信息（File Header）&quot;&gt;&lt;/a&gt;查看文件头信息（File Header）&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;readelf -h &amp;lt;ELF file&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这个命令显示 ELF 文件的文件头信息，包括 ELF 类型（如可执行文件、共享对象等）、入口点地址、程序头表位置、段头表位置等。&lt;/p&gt;
+&lt;h3 id=&quot;查看程序头表（Program-Headers）&quot;&gt;&lt;a href=&quot;#查看程序头表（Program-Headers）&quot; class=&quot;headerlink&quot; title=&quot;查看程序头表（Program Headers）&quot;&gt;&lt;/a&gt;查看程序头表（Program Headers）&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;readelf -l &amp;lt;ELF file&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;程序头表描述了文件在内存中的映射。这个命令显示了每个段的信息，如类型（如 &lt;code&gt;LOAD&lt;/code&gt;、&lt;code&gt;DYNAMIC&lt;/code&gt; 等）、偏移、虚拟地址、物理地址、文件大小和内存大小等。&lt;/p&gt;
+&lt;h3 id=&quot;查看段头表（Section-Headers）&quot;&gt;&lt;a href=&quot;#查看段头表（Section-Headers）&quot; class=&quot;headerlink&quot; title=&quot;查看段头表（Section Headers）&quot;&gt;&lt;/a&gt;查看段头表（Section Headers）&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;readelf -S &amp;lt;ELF file&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;段头表包含了文件中所有段的信息。这个命令显示了每个段的名称、类型、地址、偏移、大小、链接信息、对齐和其他属性。&lt;/p&gt;
+&lt;h3 id=&quot;查看符号表（Symbol-Table）&quot;&gt;&lt;a href=&quot;#查看符号表（Symbol-Table）&quot; class=&quot;headerlink&quot; title=&quot;查看符号表（Symbol Table）&quot;&gt;&lt;/a&gt;查看符号表（Symbol Table）&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;readelf -s &amp;lt;ELF file&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;符号表包含了文件中的符号信息，如函数和变量名。这个命令显示了每个符号的名称、类型、大小、值（地址）和绑定信息。&lt;/p&gt;</summary>
     
     
     
