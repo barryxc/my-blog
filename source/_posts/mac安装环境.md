@@ -27,7 +27,15 @@ category: mac
    brew install git
    ```
 
-5. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
+5. 安装 `jadx` 工具
+
+   1. [链接](https://github.com/skylot/jadx)
+
+6. 安装 jdgui 工具
+
+   1. [链接](https://java-decompiler.github.io/)
+
+7. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
 
    ```shell
    npm install -g commitizen
@@ -39,30 +47,30 @@ category: mac
 
    <!--more-->
 
-6. 在当前的目录中打开 `iterm2  `命令行工具 : [链接](https://support.apple.com/zh-cn/guide/terminal/trmlb20c7888/mac)	
+8. 在当前的目录中打开 `iterm2  `命令行工具 : [链接](https://support.apple.com/zh-cn/guide/terminal/trmlb20c7888/mac)	
    - 从访达打开新的“终端”窗口或标签页
 
-7. 安装 `node` 环境 ,`--global` 全局安装
+9. 安装 `node` 环境 ,`--global` 全局安装
    - https://nodejs.org/en
 
-8. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
+10. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
 
    - https://piclist.cn/
 
-9. 解决 `git` 中文路径显示 `unicode` 代码问题
+11. 解决 `git` 中文路径显示 `unicode` 代码问题
 
-   ```shell
-   git config --global core.quotepath false
-   ```
+    ```shell
+    git config --global core.quotepath false
+    ```
 
-10. 安装 `hexo` 工具
+12. 安装 `hexo` 工具
     - `Hexo`https://hexo.io/zh-cn/
 
-11. 安装 `alfred` 工具，创建 `yd`有道翻译工作流
+13. 安装 `alfred` 工具，创建 `yd`有道翻译工作流
     - `Alfred`:https://www.alfredapp.com/
     - `yd` `workflow`:https://github.com/wensonsmith/YoudaoTranslator
 
-12. 安装常用 `ide` 集成开发环境
+14. 安装常用 `ide` 集成开发环境
 
     1. `android studio` 
     2. `vscode` 
@@ -75,9 +83,9 @@ category: mac
     7. `charles`
     8. `Sourcetree`
 
-13. 配置 `ssh` 环境、`github ssh` 环境
+15. 配置 `ssh` 环境、`github ssh` 环境
 
-14. 配置 `.zshrc` 环境变量以及`PATH`
+16. 配置 `.zshrc` 环境变量以及`PATH`
 
     ```shell
     export ANDROID_HOME=/Users/$USER/Library/Android/sdk
