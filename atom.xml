@@ -91,7 +91,7 @@
     <link href="https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/"/>
     <id>https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</id>
     <published>2024-01-18T03:54:21.000Z</published>
-    <updated>2024-01-21T12:21:18.982Z</updated>
+    <updated>2024-01-24T15:00:33.365Z</updated>
     
     
     <summary type="html">&lt;ol&gt;
@@ -113,6 +113,16 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;安装 &lt;code&gt;git&lt;/code&gt; 命令行工具&lt;/p&gt;
 &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 &lt;code&gt;jadx&lt;/code&gt; 工具&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/skylot/jadx&quot;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 jdgui 工具&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://java-decompiler.github.io/&quot;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;安装 &lt;code&gt;git-cz&lt;/code&gt; 插件，&lt;a href=&quot;https://github.com/commitizen/cz-cli&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g commitizen&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -g cz-conventional-changelog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;#x27;&amp;#123; &amp;quot;path&amp;quot;: &amp;quot;cz-conventional-changelog&amp;quot; &amp;#125;&amp;#x27; &amp;gt; ~/.czrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -452,7 +462,7 @@
     <link href="https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95/"/>
     <id>https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95/</id>
     <published>2023-06-22T16:57:32.000Z</published>
-    <updated>2024-01-18T03:25:58.966Z</updated>
+    <updated>2024-01-24T15:01:42.097Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;基础语法&quot;&gt;&lt;a href=&quot;#基础语法&quot; class=&quot;headerlink&quot; title=&quot;基础语法&quot;&gt;&lt;/a&gt;基础语法&lt;/h2&gt;&lt;table&gt;
