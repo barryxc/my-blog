@@ -27,15 +27,21 @@ category: mac
    brew install git
    ```
 
+   <!--more-->
+
 5. 安装 `jadx` 工具
 
-   1. [链接](https://github.com/skylot/jadx)
+   1. https://github.com/skylot/jadx
 
 6. 安装 jdgui 工具
 
-   1. [链接](https://java-decompiler.github.io/)
+   1. https://java-decompiler.github.io/
 
-7. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
+7. 安装代码统计工具
+
+   1. https://github.com/AlDanial/cloc?tab=readme-ov-file#install-via-package-manager
+
+8. 安装 `git-cz` 插件，[链接](https://github.com/commitizen/cz-cli)
 
    ```shell
    npm install -g commitizen
@@ -45,15 +51,13 @@ category: mac
 
    * https://github.com/commitizen/cz-cli
 
-   <!--more-->
-
-8. 在当前的目录中打开 `iterm2  `命令行工具 : [链接](https://support.apple.com/zh-cn/guide/terminal/trmlb20c7888/mac)	
+9. 在当前的目录中打开 `iterm2  `命令行工具 : [链接](https://support.apple.com/zh-cn/guide/terminal/trmlb20c7888/mac)	
    - 从访达打开新的“终端”窗口或标签页
 
-9. 安装 `node` 环境 ,`--global` 全局安装
+10. 安装 `node` 环境 ,`--global` 全局安装
    - https://nodejs.org/en
 
-10. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
+11. 通过 `typora` 图像设置安装  `PicList` 图床软件, 设置 `github` 图床
 
    - https://piclist.cn/
 
