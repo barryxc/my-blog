@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2024-01-21T14:24:52.634Z</updated>
+  <updated>2024-04-05T06:59:33.472Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建mac应用</title>
+    <link href="https://xuechuang.cc/2024/04/05/%E5%88%9B%E5%BB%BAmac%E5%BA%94%E7%94%A8/"/>
+    <id>https://xuechuang.cc/2024/04/05/%E5%88%9B%E5%BB%BAmac%E5%BA%94%E7%94%A8/</id>
+    <published>2024-04-05T06:48:41.000Z</published>
+    <updated>2024-04-05T06:59:33.472Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;如何为一个-sh-脚本创建-mac-应用程序？&quot;&gt;&lt;a href=&quot;#如何为一个-sh-脚本创建-mac-应用程序？&quot; class=&quot;headerlink&quot; title=&quot;如何为一个 sh 脚本创建 mac 应用程序？&quot;&gt;&lt;/a&gt;如何为一个 sh 脚本创建 mac 应用程序？&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;创建捆绑包目录结构&lt;/strong&gt;： 在 Finder 中，创建一个新的文件夹来作为应用程序捆绑包的根目录，并以 &lt;code&gt;.app&lt;/code&gt; 扩展名命名，例如 &lt;code&gt;MyShellApp.app&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建 Contents 目录&lt;/strong&gt;： 在 &lt;code&gt;MyShellApp.app&lt;/code&gt; 目录内部，创建一个名为 &lt;code&gt;Contents&lt;/code&gt; 的子目录。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建 MacOS 目录&lt;/strong&gt;： 在 &lt;code&gt;Contents&lt;/code&gt; 目录内部，创建一个名为 &lt;code&gt;MacOS&lt;/code&gt; 的子目录。这是可执行文件的存放位置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建 Info.plist 文件&lt;/strong&gt;： 在 &lt;code&gt;Contents&lt;/code&gt; 目录中创建一个名为 &lt;code&gt;Info.plist&lt;/code&gt; 的属性列表文件。这个文件包含了应用程序的元数据。以下是一个基本的 &lt;code&gt;Info.plist&lt;/code&gt; 示例：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="mac app" scheme="https://xuechuang.cc/categories/mac-app/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>mmap机制</title>
@@ -88,10 +108,10 @@
   
   <entry>
     <title>mac安装环境</title>
-    <link href="https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/"/>
-    <id>https://xuechuang.cc/2024/01/18/mac%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</id>
+    <link href="https://xuechuang.cc/2024/01/18/mac%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E7%8E%AF%E5%A2%83/"/>
+    <id>https://xuechuang.cc/2024/01/18/mac%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E7%8E%AF%E5%A2%83/</id>
     <published>2024-01-18T03:54:21.000Z</published>
-    <updated>2024-01-26T09:36:20.456Z</updated>
+    <updated>2024-04-05T07:02:25.243Z</updated>
     
     
     <summary type="html">&lt;ol&gt;
@@ -527,31 +547,6 @@
     <category term="shellcheck" scheme="https://xuechuang.cc/tags/shellcheck/"/>
     
     <category term="sublime" scheme="https://xuechuang.cc/tags/sublime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux命令大全</title>
-    <link href="https://xuechuang.cc/2023/06/21/linux-%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
-    <id>https://xuechuang.cc/2023/06/21/linux-%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</id>
-    <published>2023-06-20T16:13:48.000Z</published>
-    <updated>2024-01-18T03:25:58.966Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;linux-命令大全&quot;&gt;&lt;a href=&quot;#linux-命令大全&quot; class=&quot;headerlink&quot; title=&quot;linux 命令大全&quot;&gt;&lt;/a&gt;linux 命令大全&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-command-manual.html&quot;&gt;Runoob&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://man.niaoge.com/&quot;&gt;鸟哥Linux命令大全&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://linux.51yip.com/&quot;&gt;Linux命令手册&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.linuxcool.com/&quot;&gt;Linux命令大全(手册)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.linuxcommands.site/&quot;&gt;LinuxCommands.site&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
-    
-    
-    <category term="linux" scheme="https://xuechuang.cc/tags/linux/"/>
     
   </entry>
   
