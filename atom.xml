@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2024-04-05T06:59:33.472Z</updated>
+  <updated>2024-04-06T11:48:39.402Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>post</title>
+    <link href="https://xuechuang.cc/2024/04/06/native%E8%B0%83%E8%AF%95/"/>
+    <id>https://xuechuang.cc/2024/04/06/native%E8%B0%83%E8%AF%95/</id>
+    <published>2024-04-06T11:45:40.000Z</published>
+    <updated>2024-04-06T11:48:39.402Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Native-调试总结&quot;&gt;&lt;a href=&quot;#Native-调试总结&quot; class=&quot;headerlink&quot; title=&quot;Native 调试总结&quot;&gt;&lt;/a&gt;Native 调试总结&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;debug so 才可以调试，release so 不可以调试。&lt;/li&gt;
+&lt;li&gt;还原堆栈需要 &amp;#x2F;build&amp;#x2F;intermediates&amp;#x2F;cmake目录下的 so 才可以&lt;/li&gt;
+&lt;li&gt;使用 sdk 工程调试另外一个 app 时需要修改 sdk工程中的 app 模块的包名和调试的 apk 一致。&lt;/li&gt;
+&lt;li&gt;通过 dlopen() 的 so，默认不执行 jni_onload，只有 java层的 system.loadlibrary()才会执行。想要执行 jni_onload 执行 so 库初始化，需要手动调用 java 层的加载机制。&lt;/li&gt;
+&lt;li&gt;dlsym()函数获取符号地址时，要保证 so 的符号被导出。可以通过 nm -D  xx.so 命令查看是否有对应的符号&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="debug" scheme="https://xuechuang.cc/categories/debug/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>创建mac应用</title>
@@ -521,32 +544,6 @@
     
     
     <category term="shell语法" scheme="https://xuechuang.cc/tags/shell%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何编写shell脚本</title>
-    <link href="https://xuechuang.cc/2023/06/21/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99shell%E8%84%9A%E6%9C%AC/"/>
-    <id>https://xuechuang.cc/2023/06/21/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99shell%E8%84%9A%E6%9C%AC/</id>
-    <published>2023-06-21T10:06:43.000Z</published>
-    <updated>2024-01-18T03:25:58.967Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;如何编写-shell-脚本&quot;&gt;&lt;a href=&quot;#如何编写-shell-脚本&quot; class=&quot;headerlink&quot; title=&quot;如何编写 shell  脚本?&quot;&gt;&lt;/a&gt;如何编写 shell  脚本?&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://itnext.io/upgrading-bash-on-macos-7138bd1066ba&quot;&gt;升级bash&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;选择编辑器&lt;/li&gt;
-&lt;li&gt;安装 shell check 语法检查工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;安装-shellcheck-工具&quot;&gt;&lt;a href=&quot;#安装-shellcheck-工具&quot; class=&quot;headerlink&quot; title=&quot;安装 shellcheck 工具&quot;&gt;&lt;/a&gt;安装 shellcheck 工具&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install shellcheck&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
-    
-    
-    <category term="shellcheck" scheme="https://xuechuang.cc/tags/shellcheck/"/>
-    
-    <category term="sublime" scheme="https://xuechuang.cc/tags/sublime/"/>
     
   </entry>
   
