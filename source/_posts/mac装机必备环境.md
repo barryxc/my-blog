@@ -33,53 +33,67 @@ category: mac装机必备
 
 9. 安装 `ghidra` 反编译工具(c/c++反编译) https://github.com/NationalSecurityAgency/ghidra
 
-10. 安装 `colc` 代码统计工具 https://github.com/AlDanial/cloc?tab=readme-ov-file#install-via-package-manager
+10. 安装 `die`  (detect it easy) native 反编译工具 https://github.com/horsicq/Detect-It-Easy
 
-11. 安装 `node` 环境 `--global` 全局安装 https://nodejs.org/en
+11. 安装 `bifrost` 网络代理工具
 
-12. 安装 `typora` 以及  `PicList` 图床软件, 设置 `github` 图床 https://piclist.cn/
+12. 安装 `colc` 代码统计工具 https://github.com/AlDanial/cloc?tab=readme-ov-file#install-via-package-manager
 
-13. 安装 `hexo` 工具 https://hexo.io/zh-cn/
+13. 安装 `node` 环境 `--global` 全局安装 https://nodejs.org/en
 
-14. 安装 `postman` 网络请求工具 https://www.postman.com/
+14. 安装 `typora` 以及  `PicList` 图床软件, 设置 `github` 图床 https://piclist.cn/
 
-15. 安装 `alfred` 工具 https://www.alfredapp.com/
+15. 安装 `hexo` 工具 https://hexo.io/zh-cn/
 
-16. 安装`youdao`有道翻译工作流插件 https://github.com/wensonsmith/YoudaoTranslator
+16. 安装 `postman` 网络请求工具 https://www.postman.com/
 
-17. 安装 `sublime` https://www.sublimetext.com/ 
+17. 安装 `alfred` 工具 https://www.alfredapp.com/
 
-18. 安装 `submlime HTML-CSS-JS Prettify` 插件，步骤： `Tools`->`Command Palette`->`Package Control:Install Package ` 
+18. 安装`youdao`有道翻译工作流插件 https://github.com/wensonsmith/YoudaoTranslator
 
-19. 安装 `submlime shellcheck `插件，步骤： `Tools`->`Command Palette`->`Package Control:Install Package ` 
+19. 安装 `sublime` https://www.sublimetext.com/ 
 
-20. 安装 `vscode` 开发工具 https://code.visualstudio.com/
+20. 安装 `submlime HTML-CSS-JS Prettify` 插件，步骤： `Tools`->`Command Palette`->`Package Control:Install Package ` 
 
-21. 安装 `idea` 开发工具 https://www.jetbrains.com/zh-cn/idea/
+21. 安装 `submlime shellcheck `插件，步骤： `Tools`->`Command Palette`->`Package Control:Install Package ` 
 
-22. 安装 `Clion` 开发工具 https://www.jetbrains.com.cn/clion/
+22. 安装 `vscode` 开发工具 https://code.visualstudio.com/
 
-23. 安装 `charles` 抓包工具 https://www.charlesproxy.com/
+23. 安装 `idea` 开发工具 https://www.jetbrains.com/zh-cn/idea/
 
-24. 安装 `android studio`开发工具 https://developer.android.com/studio
+24. 安装 `Clion` 开发工具 https://www.jetbrains.com.cn/clion/
+
+25. 安装 `charles` 抓包工具 https://www.charlesproxy.com/
+
+26. 安装 `wireshark` 网络抓包工具 https://www.wireshark.org/
+
+27. 安装 `android studio`开发工具 https://developer.android.com/studio
 
 ### 环境配置
 
 1. 配置 `ssh` 环境、`github ssh` 环境
+
+   ```
+   ssh-keygen -t rsa -b 4096 -C "cxue.dev@qq.com"
+   ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+   ssh-add ~/.ssh/xxx.pub
+   ssh -T github.com  ## 测试是否连通
+   ```
+
 2. 配置 `.zshrc` 配置文件以及`PATH`环境变量
 
-  ```
-  export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-  export JAVA_HOME=$(/usr/libexec/java_home)
-  export ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/21.1.6352462
-  export PATH=${PATH}:${ANDROID_HOME}/platform-tools/
-  export PATH=${PATH}:${ANDROID_HOME}/tools/
-  export PATH=${PATH}:${ANDROID_HOME}/tools/bin/
-  export PATH=${PATH}:${ANDROID_NDK_HOME}/
-  export PATH=${PATH}:${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/
-  export PATH=${PATH}:${ANDROID_HOME}/build-tools/34.0.0/
-  export PATH=${PATH}:.
-  ```
+	```
+    export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/21.1.6352462
+    export PATH=${PATH}:${ANDROID_HOME}/platform-tools/
+    export PATH=${PATH}:${ANDROID_HOME}/tools/
+    export PATH=${PATH}:${ANDROID_HOME}/tools/bin/
+    export PATH=${PATH}:${ANDROID_NDK_HOME}/
+    export PATH=${PATH}:${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/
+    export PATH=${PATH}:${ANDROID_HOME}/build-tools/34.0.0/
+    export PATH=${PATH}:.
+	```
 
 3. 添加当前目录到 PATH 中，可以避免每次执行文件时添加 `./ `前缀:  `export PATH=${PATH}:.`
 
