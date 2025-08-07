@@ -6,7 +6,7 @@
   <link href="https://xuechuang.cc/atom.xml" rel="self"/>
   
   <link href="https://xuechuang.cc/"/>
-  <updated>2025-08-06T08:59:24.032Z</updated>
+  <updated>2025-08-07T09:54:34.580Z</updated>
   <id>https://xuechuang.cc/</id>
   
   <author>
@@ -17,17 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>readelf、nm以及objdump的作用与区别</title>
+    <link href="https://xuechuang.cc/2025/08/07/elf%E5%B7%A5%E5%85%B7%E5%AF%B9%E6%AF%94-md/"/>
+    <id>https://xuechuang.cc/2025/08/07/elf%E5%B7%A5%E5%85%B7%E5%AF%B9%E6%AF%94-md/</id>
+    <published>2025-08-07T09:53:22.000Z</published>
+    <updated>2025-08-07T09:54:34.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;readelf、nm-和-objdump-的作用与区别&quot;&gt;&lt;a href=&quot;#readelf、nm-和-objdump-的作用与区别&quot; class=&quot;headerlink&quot; title=&quot;readelf、nm 和 objdump</summary>
+        
+      
+    
+    
+    
+    <category term="c++" scheme="https://xuechuang.cc/categories/c/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ELF各个段含义</title>
     <link href="https://xuechuang.cc/2025/08/06/elf%E5%90%84%E4%B8%AA%E6%AE%B5%E5%90%AB%E4%B9%89/"/>
     <id>https://xuechuang.cc/2025/08/06/elf%E5%90%84%E4%B8%AA%E6%AE%B5%E5%90%AB%E4%B9%89/</id>
     <published>2025-08-05T16:00:00.000Z</published>
-    <updated>2025-08-06T08:59:24.032Z</updated>
+    <updated>2025-08-07T10:01:26.703Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;1-ELF文件结构&quot;&gt;&lt;a href=&quot;#1-ELF文件结构&quot; class=&quot;headerlink&quot; title=&quot;1. ELF文件结构&quot;&gt;&lt;/a&gt;1. ELF文件结构&lt;/h2&gt;&lt;p&gt;​        ELF文件的格式大致如下，其中比较重要的时文件头和段表：文件头描述文件的基本信息；段表类似所有段即section的指针表。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/image.png&quot; alt=&quot;../images/elf.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ELF&lt;/strong&gt; &lt;strong&gt;Header：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;​        可以使用&lt;code&gt;readelf -h main.o&lt;/code&gt;查看可执行文件中的header，ELF Header 中定义了 ELF Magic Code、文件机器字节长度、数据存储方式、版本、运行平台、ABI 版本、ELF 重定位类型、硬件平台、硬件平台版本、入口地址、程序头入口与长度、Section Header 的偏移位置和长度以及 Section 数量等。&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;1-ELF文件结构&quot;&gt;&lt;a href=&quot;#1-ELF文件结构&quot; class=&quot;headerlink&quot; title=&quot;1. ELF文件结构&quot;&gt;&lt;/a&gt;1. &lt;a href=&quot;https://www.openeuler.openatom.cn/zh/blog/lijiajie128/2020-11-03-ELF%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90&quot;&gt;ELF文件结构&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;​        ELF文件的格式大致如下，其中比较重要的时文件头和段表：文件头描述文件的基本信息；段表类似所有段即section的指针表。&lt;/p&gt;
+&lt;p&gt;文件头定义了 ELF Magic Code、文件机器字节长度、数据存储方式、版本、运行平台、ABI 版本、ELF 重定位类型、硬件平台、硬件平台版本、入口地址、程序头入口与长度、Section Header 的偏移位置和长度以及 Section 数量等。&lt;/p&gt;
 &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ELF Header:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Magic:   &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;f &lt;span class=&quot;number&quot;&gt;45&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;c &lt;span class=&quot;number&quot;&gt;46&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;02&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;01&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;01&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Class:                             ELF64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Data:                              &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&amp;#x27;s complement, little endian&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Version:                           1 (current)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  OS/ABI:                            UNIX - System V&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  ABI Version:                       0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Type:                              REL (Relocatable file)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Machine:                           Advanced Micro Devices X86-64&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Version:                           0x1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Entry point address:               0x0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Start of program headers:          0 (bytes into file)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Start of section headers:          1000 (bytes into file)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Flags:                             0x0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Size of this header:               64 (bytes)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Size of program headers:           0 (bytes)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Number of program headers:         0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Size of section headers:           64 (bytes)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Number of section headers:         15&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  Section header string table index: 14&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;段表：&lt;/strong&gt;&lt;/p&gt;
@@ -463,32 +484,6 @@
 &lt;h2 id=&quot;和-96-96&quot;&gt;&lt;a href=&quot;#和-96-96&quot; class=&quot;headerlink&quot; title=&quot;$()和  &amp;#96;&amp;#96;&quot;&gt;&lt;/a&gt;&lt;code&gt;$()和 &lt;/code&gt; &amp;#96;&amp;#96;&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;在 bash shell 中，$( ) 与` ` (反引号) 都是用来做命令替换用(commandsubstitution)的。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;例如   version=$(uname -r)和version=`uname -r`都可以是version得到内核的版本号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;各自的优缺点：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1. `  ` 基本上可用在全部的 unix shell 中使用，若写成 shell script ，其移植性比较高。但反单引号容易打错或看错。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. $()并不是所有shell都支持。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;${ }&quot;&gt;&lt;/a&gt;&lt;code&gt;$&amp;#123; &amp;#125;&lt;/code&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$&amp;#123; &amp;#125;用于变量替换。一般情况下，$var 与$&amp;#123;var&amp;#125; 并没有啥不一样。但是用 $&amp;#123; &amp;#125; 会比较精确的界定变量名称的范围。比如&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ A=B&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ echo $AB&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;原本是打算先将 $A 的结果替换出来，然后再补一个 B 字母于其后，&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;但在命令行上，真正的结果却是只会提换变量名称为 AB 的值出来…&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;若使用 $&amp;#123; &amp;#125; 就没问题了：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ echo $&amp;#123;A&amp;#125;B&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;BB&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$&amp;#123; &amp;#125;的功能远不止于此.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="shell" scheme="https://xuechuang.cc/categories/shell/"/>
-    
-    
-    <category term="shell" scheme="https://xuechuang.cc/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell语法练习</title>
-    <link href="https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/"/>
-    <id>https://xuechuang.cc/2023/06/23/shell%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</id>
-    <published>2023-06-23T11:51:02.000Z</published>
-    <updated>2024-01-18T03:25:58.966Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/exam/oj?page=1&amp;tab=SHELL%E7%AF%87&amp;topicId=195&quot;&gt;牛客网练习&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;查看可用的shell&quot;&gt;&lt;a href=&quot;#查看可用的shell&quot; class=&quot;headerlink&quot; title=&quot;查看可用的shell&quot;&gt;&lt;/a&gt;查看可用的shell&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/shells&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;shebang&quot;&gt;&lt;a href=&quot;#shebang&quot; class=&quot;headerlink&quot; title=&quot;shebang&quot;&gt;&lt;/a&gt;shebang&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;!/bin/sh&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;字符串&quot;&gt;&lt;a href=&quot;#字符串&quot; class=&quot;headerlink&quot; title=&quot;字符串&quot;&gt;&lt;/a&gt;字符串&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;str=&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;定义字符串 $&amp;#123;str&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;字符串的长度为 $&amp;#123;#str&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;截取索引从1开始，长度为4的子串 $&amp;#123;str:1:4&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a=(234 2 3 4 5 6)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;定义数组 a=($&amp;#123;a[*]&amp;#125;)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;数组的长度为 $&amp;#123;#a[*]&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;数组第一个元素的长度$&amp;#123;#a[0]&amp;#125;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     

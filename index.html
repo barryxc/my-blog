@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">66</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">67</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -197,6 +197,173 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2025/08/07/elf%E5%B7%A5%E5%85%B7%E5%AF%B9%E6%AF%94-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
+      <meta itemprop="name" content="barry">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/07/elf%E5%B7%A5%E5%85%B7%E5%AF%B9%E6%AF%94-md/" class="post-title-link" itemprop="url">readelf、nm以及objdump的作用与区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-07 17:53:22 / 修改时间：17:54:34" itemprop="dateCreated datePublished" datetime="2025-08-07T17:53:22+08:00">2025-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="readelf、nm-和-objdump-的作用与区别"><a href="#readelf、nm-和-objdump-的作用与区别" class="headerlink" title="readelf、nm 和 objdump 的作用与区别"></a>readelf、nm 和 objdump 的作用与区别</h4><h5 id="1-readelf"><a href="#1-readelf" class="headerlink" title="1. readelf"></a>1. readelf</h5><ul>
+<li>作用<br>用于解析和显示 ELF 格式文件（如可执行文件、动态库、core dump）的详细结构信息，包括：<ul>
+<li>ELF Header（文件类型、入口地址、节头表偏移等）。</li>
+<li>Program Headers（内存段类型、权限、文件偏移等）。</li>
+<li>Section Headers（节名称、类型、大小等）。</li>
+<li>符号表（<code>.symtab</code>）、重定位表（<code>.rel.*</code>）等调试信息。</li>
+</ul>
+</li>
+<li>示例命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">readelf -a a.out          # 显示所有信息</span><br><span class="line">readelf -S a.out          # 仅显示节头表</span><br><span class="line">readelf -l a.out          # 仅显示程序头表</span><br></pre></td></tr></table></figure></li>
+<li>优点<ul>
+<li>输出信息全面，适合分析 ELF 文件的底层结构。</li>
+<li>支持直接解析二进制文件，无需依赖其他工具。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>输出内容较为原始，需手动筛选关键信息。</li>
+<li>不支持反汇编代码段内容。<h5 id="2-nm"><a href="#2-nm" class="headerlink" title="2. nm"></a>2. nm</h5></li>
+</ul>
+</li>
+<li>作用<br>显示 ELF 文件中的符号表信息，包括：<ul>
+<li>符号名称、地址、类型（如函数、全局变量、未初始化变量等）。</li>
+<li>符号的可见性（如全局符号 <code>T</code>、本地符号 <code>t</code>）。</li>
+</ul>
+</li>
+<li>示例命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nm a.out                  # 显示所有符号</span><br><span class="line">nm -D /lib64/ld-linux-x86-64.so.2  # 显示动态库符号</span><br></pre></td></tr></table></figure></li>
+<li>优点<ul>
+<li>快速定位符号地址和类型，适合调试符号冲突或未定义引用问题。</li>
+<li>输出简洁，适合脚本化处理。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>仅显示符号表，无法查看内存布局或节信息。</li>
+<li>不支持反汇编或动态链接信息分析。<h5 id="3-objdump"><a href="#3-objdump" class="headerlink" title="3. objdump"></a>3. objdump</h5></li>
+</ul>
+</li>
+<li>作用<br>提供更全面的 ELF 文件分析功能，包括：<ul>
+<li>反汇编代码段（<code>.text</code> 节）。</li>
+<li>显示节头表、程序头表、动态段（<code>.dynamic</code>）等。</li>
+<li>解析重定位信息（<code>.rel.*</code> 节）。</li>
+</ul>
+</li>
+<li>示例命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">objdump -d a.out          # 反汇编代码段</span><br><span class="line">objdump -x a.out          # 显示所有头信息和节内容</span><br><span class="line">objdump -R a.out          # 显示动态重定位信息</span><br></pre></td></tr></table></figure></li>
+<li>优点<ul>
+<li>支持反汇编，适合分析代码逻辑或机器指令。</li>
+<li>输出格式灵活，可结合 <code>-S</code> 选项混合显示汇编和源码（需调试信息）。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>反汇编可能因优化选项（如 <code>-O2</code>）导致代码难以阅读。</li>
+<li>输出信息量大，需结合过滤条件（如 <code>-j .text</code>）缩小范围。<h4 id="三者对比总结"><a href="#三者对比总结" class="headerlink" title="三者对比总结"></a>三者对比总结</h4><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>核心功能</th>
+<th>适用场景</th>
+<th>优势</th>
+<th>局限性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>readelf</td>
+<td>解析 ELF 结构信息</td>
+<td>分析文件头、节头、程序头</td>
+<td>信息全面，直接解析二进制</td>
+<td>输出原始，需手动筛选</td>
+</tr>
+<tr>
+<td>nm</td>
+<td>显示符号表</td>
+<td>调试符号冲突、未定义引用</td>
+<td>快速定位符号地址和类型</td>
+<td>仅限符号表，无代码分析能力</td>
+</tr>
+<tr>
+<td>objdump</td>
+<td>反汇编、节内容解析</td>
+<td>代码逻辑分析、动态链接调试</td>
+<td>支持反汇编和混合源码显示</td>
+<td>输出信息量大，需过滤条件</td>
+</tr>
+</tbody></table>
+<h4 id="选择建议"><a href="#选择建议" class="headerlink" title="选择建议"></a>选择建议</h4></li>
+</ul>
+</li>
+<li>分析 ELF 文件结构 → 使用 <code>readelf</code>。</li>
+<li>调试符号问题 → 使用 <code>nm</code>。</li>
+<li>反汇编或动态链接分析 → 使用 <code>objdump</code>。</li>
+<li>综合调试 → 结合三者（如 <code>readelf</code> 查看结构，<code>nm</code> 定位符号，<code>objdump</code> 反汇编）。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2025/08/06/elf%E5%90%84%E4%B8%AA%E6%AE%B5%E5%90%AB%E4%B9%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,9 +392,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-08-06 00:00:00 / 修改时间：16:59:24" itemprop="dateCreated datePublished" datetime="2025-08-06T00:00:00+08:00">2025-08-06</time>
+      <time title="创建时间：2025-08-06 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-06T00:00:00+08:00">2025-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-08-07 18:01:26" itemprop="dateModified" datetime="2025-08-07T18:01:26+08:00">2025-08-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,10 +422,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="1-ELF文件结构"><a href="#1-ELF文件结构" class="headerlink" title="1. ELF文件结构"></a>1. ELF文件结构</h2><p>​        ELF文件的格式大致如下，其中比较重要的时文件头和段表：文件头描述文件的基本信息；段表类似所有段即section的指针表。</p>
-<p><img src="/image.png" alt="../images/elf.png"></p>
-<p><strong>ELF</strong> <strong>Header：</strong></p>
-<p>​        可以使用<code>readelf -h main.o</code>查看可执行文件中的header，ELF Header 中定义了 ELF Magic Code、文件机器字节长度、数据存储方式、版本、运行平台、ABI 版本、ELF 重定位类型、硬件平台、硬件平台版本、入口地址、程序头入口与长度、Section Header 的偏移位置和长度以及 Section 数量等。</p>
+          <h2 id="1-ELF文件结构"><a href="#1-ELF文件结构" class="headerlink" title="1. ELF文件结构"></a>1. <a target="_blank" rel="noopener" href="https://www.openeuler.openatom.cn/zh/blog/lijiajie128/2020-11-03-ELF%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90">ELF文件结构</a></h2><p>​        ELF文件的格式大致如下，其中比较重要的时文件头和段表：文件头描述文件的基本信息；段表类似所有段即section的指针表。</p>
+<p>文件头定义了 ELF Magic Code、文件机器字节长度、数据存储方式、版本、运行平台、ABI 版本、ELF 重定位类型、硬件平台、硬件平台版本、入口地址、程序头入口与长度、Section Header 的偏移位置和长度以及 Section 数量等。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ELF Header:</span><br><span class="line">  Magic:   <span class="number">7</span>f <span class="number">45</span> <span class="number">4</span>c <span class="number">46</span> <span class="number">02</span> <span class="number">01</span> <span class="number">01</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span></span><br><span class="line">  Class:                             ELF64</span><br><span class="line">  Data:                              <span class="number">2</span><span class="string">&#x27;s complement, little endian</span></span><br><span class="line"><span class="string">  Version:                           1 (current)</span></span><br><span class="line"><span class="string">  OS/ABI:                            UNIX - System V</span></span><br><span class="line"><span class="string">  ABI Version:                       0</span></span><br><span class="line"><span class="string">  Type:                              REL (Relocatable file)</span></span><br><span class="line"><span class="string">  Machine:                           Advanced Micro Devices X86-64</span></span><br><span class="line"><span class="string">  Version:                           0x1</span></span><br><span class="line"><span class="string">  Entry point address:               0x0</span></span><br><span class="line"><span class="string">  Start of program headers:          0 (bytes into file)</span></span><br><span class="line"><span class="string">  Start of section headers:          1000 (bytes into file)</span></span><br><span class="line"><span class="string">  Flags:                             0x0</span></span><br><span class="line"><span class="string">  Size of this header:               64 (bytes)</span></span><br><span class="line"><span class="string">  Size of program headers:           0 (bytes)</span></span><br><span class="line"><span class="string">  Number of program headers:         0</span></span><br><span class="line"><span class="string">  Size of section headers:           64 (bytes)</span></span><br><span class="line"><span class="string">  Number of section headers:         15</span></span><br><span class="line"><span class="string">  Section header string table index: 14</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>段表：</strong></p>
@@ -545,111 +716,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/01/21/mmap%E6%9C%BA%E5%88%B6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuechuang.cc/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/20833925?v=4">
-      <meta itemprop="name" content="barry">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">NDK常用工具</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-01-21 14:24:31" itemprop="dateCreated datePublished" datetime="2024-01-21T14:24:31+08:00">2024-01-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-22 14:20:01" itemprop="dateModified" datetime="2024-01-22T14:20:01+08:00">2024-01-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/android/" itemprop="url" rel="index"><span itemprop="name">android</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="readelf"><a href="#readelf" class="headerlink" title="readelf"></a>readelf</h2><p><code>readelf</code> 是一个用于显示 ELF（Executable and Linkable Format）文件信息的命令行工具，它是 GNU Binutils 包的一部分。ELF 文件格式是在 Unix 系统上广泛使用的标准二进制格式，用于可执行文件、目标代码、共享库和核心转储（core dumps）。</p>
-<p>以下是 <code>readelf</code> 的一些核心用法：</p>
-<h3 id="查看文件头信息（File-Header）"><a href="#查看文件头信息（File-Header）" class="headerlink" title="查看文件头信息（File Header）"></a>查看文件头信息（File Header）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -h &lt;ELF file&gt;</span><br></pre></td></tr></table></figure>
-
-<p>这个命令显示 ELF 文件的文件头信息，包括 ELF 类型（如可执行文件、共享对象等）、入口点地址、程序头表位置、段头表位置等。</p>
-<h3 id="查看程序头表（Program-Headers）"><a href="#查看程序头表（Program-Headers）" class="headerlink" title="查看程序头表（Program Headers）"></a>查看程序头表（Program Headers）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -l &lt;ELF file&gt;</span><br></pre></td></tr></table></figure>
-
-<p>程序头表描述了文件在内存中的映射。这个命令显示了每个段的信息，如类型（如 <code>LOAD</code>、<code>DYNAMIC</code> 等）、偏移、虚拟地址、物理地址、文件大小和内存大小等。</p>
-<h3 id="查看段头表（Section-Headers）"><a href="#查看段头表（Section-Headers）" class="headerlink" title="查看段头表（Section Headers）"></a>查看段头表（Section Headers）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -S &lt;ELF file&gt;</span><br></pre></td></tr></table></figure>
-
-<p>段头表包含了文件中所有段的信息。这个命令显示了每个段的名称、类型、地址、偏移、大小、链接信息、对齐和其他属性。</p>
-<h3 id="查看符号表（Symbol-Table）"><a href="#查看符号表（Symbol-Table）" class="headerlink" title="查看符号表（Symbol Table）"></a>查看符号表（Symbol Table）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -s &lt;ELF file&gt;</span><br></pre></td></tr></table></figure>
-
-<p>符号表包含了文件中的符号信息，如函数和变量名。这个命令显示了每个符号的名称、类型、大小、值（地址）和绑定信息。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/01/21/NDK%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
